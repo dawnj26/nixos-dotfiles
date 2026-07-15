@@ -1,0 +1,33 @@
+{pkgs, ...}: {
+  environment.systemPackages = with pkgs; [
+    git
+    vim
+    wget
+    tealdeer
+    neovim
+    bat
+    ripgrep
+    gdu
+    unzip
+    curl
+    gcc
+    fzf
+    fd
+    cargo
+    gnumake
+    zsh
+    p7zip
+    xhost
+    gnome-keyring
+    polkit_gnome
+    clang
+    gcc
+    unrar
+    zip
+    hyprland
+    kitty
+    uwsm
+    hyprcursor
+    hyprpaper
+  ];
+}
