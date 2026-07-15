@@ -8,9 +8,7 @@
   "modules-left": ["hyprland/workspaces"],
   "modules-center": ["clock#horizontal", "clock#vertical"],
   "modules-right": [
-    "group/tray-expander",
-    "bluetooth",
-    "network",
+    "tray",
     "pulseaudio",
     "cpu",
     "battery",
@@ -18,6 +16,7 @@
   ],
   "hyprland/workspaces": {
     "format": "{icon}",
+    "on-click": "activate",
     "format-icons": {
       "default": "",
       "1": "1",
@@ -43,8 +42,7 @@
   "cpu": {
     "interval": 5,
     "format": "󰍛",
-    "on-click": "omarchy-launch-or-focus-tui btop",
-    "on-click-right": "alacritty",
+    "on-click": "btop",
   },
   "clock#horizontal": {
     "format": "{:L%A %H:%M}",
@@ -107,35 +105,6 @@
       "headset": "",
       "default": ["", "", ""],
     },
-  },
-  "group/tray-expander": {
-    "orientation": "inherit",
-    "drawer": {
-      "transition-duration": 600,
-      "children-class": "tray-group-item",
-    },
-    "modules": ["group/expand-icons", "tray"],
-  },
-  "group/expand-icons": {
-    "orientation": "inherit",
-    "modules": ["custom/expand-icon#horizontal", "custom/expand-icon#vertical"],
-  },
-  "custom/expand-icon#horizontal": {
-    "format": "",
-    "tooltip": false,
-    "on-scroll-up": "",
-    "on-scroll-down": "",
-    "on-scroll-left": "",
-    "on-scroll-right": "",
-  },
-  "custom/expand-icon#vertical": {
-    "format": "",
-    "rotate": 270,
-    "tooltip": false,
-    "on-scroll-up": "",
-    "on-scroll-down": "",
-    "on-scroll-left": "",
-    "on-scroll-right": "",
   },
   "tray": {
     "icon-size": 12,
