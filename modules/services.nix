@@ -1,12 +1,19 @@
-{...}: {
+{pkgs, ...}: {
   services = {
     openssh.enable = true;
 
     displayManager.sddm = {
       enable = true;
-      wayland.enable = true;
+      # wayland.enable = true;
+      autoNumlock = true;
+      enableHidpi = true;
+      theme = "${pkgs.elegant-sddm}/share/sddm/themes/Elegant";
+      extraPackages = with pkgs; [
+        elegant-sddm
+      ];
     };
 
+    xserver.enable = true;
     xserver.xkb = {
       layout = "us";
       variant = "";
