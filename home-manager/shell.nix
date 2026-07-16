@@ -1,4 +1,10 @@
-{config, ...}: {
+{
+  pkgs,
+  config,
+  ...
+}: let
+  configPath = "${config.home.homeDirectory}/nixos-dotfiles#laptop";
+in {
   programs.zsh = {
     enable = true;
 
