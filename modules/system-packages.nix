@@ -37,5 +37,7 @@
     gamescope
     gamemode
     umu-launcher
+    oracle-instantclient
+    bruno
   ];
 }
