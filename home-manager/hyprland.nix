@@ -2,9 +2,19 @@
   config,
   pkgs,
   ...
-}: {
-  wayland.windowManager.hyprland.systemd.enable = false;
-  xdg.configFile."hypr".source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/nixos-dotfiles/config/hypr";
+}: let
+  hyprConfigPath = "${config.home.homeDirectory}/nixos-dotfiles/config/hypr";
+in {
+  home.file."${hyprConfigPath}/.luarc.json".text = ''
+    {
+      "workspace": {
+        "library": [
+          "${pkgs.hyprland}/share/hypr/stubs"
+        ]
+      }
+    }
+  '';
+  xdg.configFile."hypr".source = config.lib.file.mkOutOfStoreSymlink hyprConfigPath;
 
   home.pointerCursor = {
     enable = true;
