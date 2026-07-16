@@ -17,6 +17,11 @@
       url = "github:abenz1267/walker";
       inputs.elephant.follows = "elephant";
     };
+
+    auto-cpufreq = {
+      url = "github:AdnanHodzic/auto-cpufreq";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = {
@@ -26,6 +31,7 @@
     home-manager,
     walker,
     elephant,
+    auto-cpufreq,
   } @ inputs: let
     system = "x86_64-linux";
     pkgs = import nixpkgs {
@@ -44,6 +50,7 @@
 
       modules = [
         ./hosts/laptop
+        auto-cpufreq.nixosModules.default
         home-manager.nixosModules.home-manager
         {
           home-manager.useGlobalPkgs = true;
