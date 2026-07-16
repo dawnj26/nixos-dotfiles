@@ -33,7 +33,7 @@
       "-alh"
       "--group-directories-first"
       "--show-symlinks"
-      "icons"
+      "--icons"
       "--no-time"
     ];
   };
