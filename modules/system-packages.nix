@@ -29,5 +29,13 @@
     uwsm
     hyprcursor
     hyprpaper
+    heroic
+    lutris
+    protonup-qt
+    mangohud
+    winetricks
+    gamescope
+    gamemode
+    umu-launcher
   ];
 }

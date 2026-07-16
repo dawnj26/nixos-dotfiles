@@ -44,9 +44,6 @@
     hyprpaper
     lazydocker
     git
-    heroic
-    lutris
-    protonup-qt
     vesktop
 
     # LSP
