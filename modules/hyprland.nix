@@ -4,4 +4,5 @@
     withUWSM = true;
     xwayland.enable = true;
   };
+  programs.uwsm.enable = true;
 }
