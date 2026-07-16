@@ -11,7 +11,8 @@
     '';
 
     shellAliases = {
-      nrs = "sudo nixos-rebuild switch --flake ${config.home.homeDirectory}/nixos-dotfiles#laptop";
+      nrs = "sudo nixos-rebuild switch --flake ${configPath}";
+      nru = "sudo nix flake update ${configPath} && sudo nixos-rebuild switch --flake ${configPath}";
       x = "eza";
       lg = "lazygit";
     };
