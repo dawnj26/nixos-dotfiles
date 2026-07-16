@@ -1,9 +1,10 @@
 local g = require("globals")
+local u = require("utils")
 local mainMod = "SUPER"
 
-hl.bind(mainMod .. " + Q", hl.dsp.exec_cmd(g.terminal))
-hl.bind(mainMod .. " + W", hl.dsp.exec_cmd(g.browser))
-hl.bind(mainMod .. " + E", hl.dsp.exec_cmd(g.file_manager))
+hl.bind(mainMod .. " + Q", hl.dsp.exec_cmd(u.uwsm(g.terminal)))
+hl.bind(mainMod .. " + W", hl.dsp.exec_cmd(u.uwsm(g.browser)))
+hl.bind(mainMod .. " + E", hl.dsp.exec_cmd(u.uwsm(g.file_manager)))
 hl.bind(mainMod .. " + C", hl.dsp.window.close())
 hl.bind(mainMod .. " + V", hl.dsp.window.float({ action = "toggle" }))
 
