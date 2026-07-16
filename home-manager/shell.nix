@@ -3,7 +3,7 @@
   config,
   ...
 }: let
-  configPath = "${config.home.homeDirectory}/nixos-dotfiles#laptop";
+  configPath = "${config.home.homeDirectory}/nixos-dotfiles";
 in {
   programs.zsh = {
     enable = true;
@@ -18,7 +18,7 @@ in {
 
     shellAliases = {
       nrs = "sudo nixos-rebuild switch --flake ${configPath}";
-      nru = "sudo nix flake update ${configPath} && sudo nixos-rebuild switch --flake ${configPath}";
+      nru = "sudo nix flake update --flake ${configPath} && sudo nixos-rebuild switch --flake ${configPath}#laptop";
       x = "eza";
       lg = "lazygit";
     };
