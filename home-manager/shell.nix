@@ -6,6 +6,10 @@
     autosuggestion.enable = true;
     syntaxHighlighting.enable = true;
 
+    envExtra = ''
+      export LD_LIBRARY_PATH="${pkgs.oracle-instantclient.lib}/lib"
+    '';
+
     shellAliases = {
       nrs = "sudo nixos-rebuild switch --flake ${config.home.homeDirectory}/nixos-dotfiles#laptop";
       x = "eza";
