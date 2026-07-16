@@ -20,5 +20,6 @@
     ./services.nix
     ./waybar.nix
     ./wlogout.nix
+    ./gaming.nix
   ];
 }
