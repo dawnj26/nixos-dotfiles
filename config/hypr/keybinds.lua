@@ -8,6 +8,8 @@ hl.bind(mainMod .. " + E", hl.dsp.exec_cmd(u.uwsm(g.file_manager)))
 hl.bind(mainMod .. " + C", hl.dsp.window.close())
 hl.bind(mainMod .. " + V", hl.dsp.window.float({ action = "toggle" }))
 
+hl.bind("Print", hl.dsp.exec_cmd(u.uwsm("screenshot")))
+
 hl.bind("ALT + SPACE", hl.dsp.exec_cmd(g.launcher))
 
 for i = 1, 10 do
