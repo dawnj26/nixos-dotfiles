@@ -1,7 +1,17 @@
-{pkgs, ...}: {
+{inputs, ...}: {
   imports = [
     ./hardware-configuration.nix
-    ../../modules
+    inputs.nur.modules.nixos.default
+    inputs.home-manager.nixosModules.home-manager
+    {
+      home-manager.useGlobalPkgs = true;
+      home-manager.useUserPackages = true;
+      home-manager.extraSpecialArgs = {inherit inputs;};
+      home-manager.users.dawn = ../../modules/home/_home.nix;
+      home-manager.backupFileExtension = "backup";
+    }
+    inputs.import-tree
+    ../../modules/system
   ];
 
   networking.hostName = "laptop";
