@@ -40,5 +40,6 @@
     oracle-instantclient
     bruno
     jdk21_headless
+    bibata-cursors
   ];
 }
