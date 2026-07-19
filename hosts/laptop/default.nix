@@ -55,7 +55,7 @@
     rtkit.enable = true;
     polkit.enable = true;
     pam.services.login.enableGnomeKeyring = true;
-    pam.services.sddm.enableGnomeKeyring = true; # if using greetd
+    pam.services.sddm.enableGnomeKeyring = true;
   };
 
   programs.zsh.enable = true;
@@ -116,4 +116,6 @@
       };
     };
   };
+
+  services.flatpak.enable = true;
 }
