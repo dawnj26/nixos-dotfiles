@@ -39,5 +39,6 @@
     umu-launcher
     oracle-instantclient
     bruno
+    jdk21_headless
   ];
 }
