@@ -48,4 +48,12 @@ in {
     presets = ["tokyo-night"];
     enableZshIntegration = true;
   };
+
+  home.packages = [
+    (pkgs.writeShellApplication {
+      name = "screenshot";
+      runtimeInputs = with pkgs; [grimblast coreutils];
+      text = builtins.readFile ../scripts/screenshot.sh;
+    })
+  ];
 }
