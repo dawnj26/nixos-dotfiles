@@ -47,7 +47,6 @@
     git
     vesktop
     obsidian
-    vscode
 
     # LSP
     lua-language-server
