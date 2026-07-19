@@ -40,6 +40,9 @@
         nur.overlays.default
       ];
       config.allowUnfree = true;
+      config.permittedInsecurePackages = [
+        "electron-40.10.5"
+      ];
     };
   in {
     nixosConfigurations.laptop = nixpkgs.lib.nixosSystem {
