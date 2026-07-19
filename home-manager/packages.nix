@@ -47,6 +47,7 @@
     git
     vesktop
     obsidian
+    pinta
 
     # LSP
     lua-language-server
@@ -60,6 +61,7 @@
     eslint
     nixd
     deadnix
+    package-version-server
 
     # Linters & Formatters
     hadolint
