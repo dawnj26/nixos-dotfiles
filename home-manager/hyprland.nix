@@ -5,6 +5,7 @@
 }: let
   hyprConfigPath = "${config.home.homeDirectory}/nixos-dotfiles/config/hypr";
 in {
+  # Add Hyprland lua completions
   home.file."${hyprConfigPath}/.luarc.json".text = ''
     {
       "workspace": {
