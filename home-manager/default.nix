@@ -21,5 +21,6 @@
     ./waybar.nix
     ./wlogout.nix
     ./gaming.nix
+    ./code.nix
   ];
 }
