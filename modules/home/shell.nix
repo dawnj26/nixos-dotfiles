@@ -43,6 +43,7 @@ in {
       "--no-time"
     ];
   };
+
   programs.starship = {
     enable = true;
     presets = ["tokyo-night"];
