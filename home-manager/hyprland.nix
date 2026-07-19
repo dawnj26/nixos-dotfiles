@@ -23,8 +23,10 @@ in {
     name = "Bibata-Modern-Ice";
     size = 24;
 
-    gtk.enable = true;
-    x11.enable = true;
+    gtk = {
+      enable = true;
+      size = 24;
+    };
 
     hyprcursor = {
       enable = true;
