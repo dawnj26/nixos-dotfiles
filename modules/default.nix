@@ -4,5 +4,6 @@
     ./services.nix
     ./hyprland.nix
     ./gaming.nix
+    ./session.nix
   ];
 }
