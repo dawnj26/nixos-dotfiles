@@ -5,7 +5,6 @@
 
   imports = [
     inputs.walker.homeManagerModules.default
-    inputs.import-tree
-    ./.
+    (inputs.import-tree ./.)
   ];
 }
