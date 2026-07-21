@@ -11,8 +11,8 @@
       home-manager.users.dawn = ../../modules/home/_home.nix;
       home-manager.backupFileExtension = "backup";
     }
-    inputs.import-tree
-    ../../modules/system
+    (inputs.import-tree ../../modules/overlays)
+    (inputs.import-tree ../../modules/system)
   ];
 
   networking.hostName = "laptop";
