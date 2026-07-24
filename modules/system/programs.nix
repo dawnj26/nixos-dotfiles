@@ -8,4 +8,5 @@
     enable = true;
     enableSSHSupport = true;
   };
+  programs.gpu-screen-recorder.enable = true;
 }
