@@ -528,6 +528,24 @@
         "type": "github"
       }
     },
+    "monique": {
+      "inputs": {
+        "nixpkgs": "nixpkgs_2"
+      },
+      "locked": {
+        "lastModified": 1784617870,
+        "narHash": "sha256-d9GswftN7r/DL3CufkIsnw35M1v2+/0uNB9sFzxFoo8=",
+        "owner": "ToRvaLDz",
+        "repo": "monique",
+        "rev": "2779de2550763902b0aaa63b819b0ea0e3f681e5",
+        "type": "github"
+      },
+      "original": {
+        "owner": "ToRvaLDz",
+        "repo": "monique",
+        "type": "github"
+      }
+    },
     "nix-cachyos-kernel": {
       "inputs": {
         "cachyos-kernel": "cachyos-kernel",
