@@ -74,5 +74,10 @@ in {
       runtimeInputs = with pkgs; [grim satty wl-clipboard slurp coreutils];
       text = builtins.readFile ../../scripts/screenshot.sh;
     })
+    (pkgs.writeShellApplication {
+      name = "screenrecord";
+      runtimeInputs = with pkgs; [jq];
+      text = builtins.readFile ../../scripts/screenrecord.sh;
+    })
   ];
 }
