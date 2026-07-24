@@ -1,7 +1,6 @@
 {pkgs, ...}: {
   home.packages = with pkgs; [
     wl-clipboard
-    nur.repos.trev.helium
     tree-sitter
     lazygit
     bottom
@@ -37,5 +36,6 @@
     vesktop
     obsidian
     pinta
+    nur.repos.tnmt.brave-origin
   ];
 }
