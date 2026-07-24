@@ -37,6 +37,14 @@
     vesktop
     obsidian
     pinta
+    papirus-icon-theme
+    tokyonight-gtk-theme
+    mpv
+    fastfetch
+    slurp
+    hyprpicker
+    foliate
+    yt-dlp
     nur.repos.tnmt.brave-origin
   ];
 }
