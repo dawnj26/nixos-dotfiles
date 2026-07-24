@@ -5,6 +5,7 @@
     lazygit
     bottom
     nerd-fonts.jetbrains-mono
+    nerd-fonts.geist-mono
     nodejs
     python3
     lazygit
