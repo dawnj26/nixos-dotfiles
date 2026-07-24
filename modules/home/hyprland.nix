@@ -85,6 +85,12 @@ in {
       progress-color = "#0db9d7";
       default-timeout = 5000;
       ignore-timeout = 1;
+      group-by = "app-name,summary,body";
+      width = 420;
+      outer-margin = 20;
+      padding = "10,15";
+      border-size = 2;
+      max-icon-size = 32;
       layer = "overlay";
       border-radius = 4;
       sort = "-time";
