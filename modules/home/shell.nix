@@ -71,8 +71,8 @@ in {
   home.packages = [
     (pkgs.writeShellApplication {
       name = "screenshot";
-      runtimeInputs = with pkgs; [grimblast coreutils];
-      text = builtins.readFile ../scripts/screenshot.sh;
+      runtimeInputs = with pkgs; [grim satty wl-clipboard slurp coreutils];
+      text = builtins.readFile ../../scripts/screenshot.sh;
     })
   ];
 }
