@@ -7,5 +7,5 @@ mkdir -p "$DIR"
 
 FILE="$DIR/Screenshot-$(date +'%Y-%m-%d_%H-%M-%S').png"
 
-grimblast --freeze --notify copysave area "$FILE"
+grim -g "$(slurp -o -r -c '#ff0000ff')" -t ppm - | satty --filename - --fullscreen --output-filename "$FILE"
 
