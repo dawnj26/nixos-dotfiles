@@ -1,6 +1,7 @@
 {
   pkgs,
   config,
+  lib,
   ...
 }: let
   configPath = "${config.home.homeDirectory}/nixos-dotfiles";
@@ -11,6 +12,20 @@ in {
     enableCompletion = true;
     autosuggestion.enable = true;
     syntaxHighlighting.enable = true;
+
+    initContent = lib.mkOrder 1000 ''
+      dc() {
+          (
+              cd "$1" || return
+              shift
+              docker compose "$@"
+          )
+      }
+      yt-transcript(){
+          yt-dlp --skip-download --write-subs --write-auto-subs --sub-lang en --sub-format ttml --convert-subs srt --output "transcript.%(ext)s" $1;
+          cat ./transcript.en.srt | sed '/^$/d' | grep -v '^[0-9]*$' | grep -v '\-->' | sed 's/<[^>]*>//g' | tr '\n' ' ' > output.txt;
+      }
+    '';
 
     envExtra = ''
       export LD_LIBRARY_PATH="${pkgs.oracle-instantclient.lib}/lib"
