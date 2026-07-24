@@ -1,6 +1,9 @@
 {...}: {
-  programs.walker = {
+  services.walker = {
     enable = true;
-    runAsService = true;
+    systemd.enable = true;
+    enableElephantIntegration = true;
   };
+
+  services.elephant.enable = true;
 }
