@@ -1,9 +1,11 @@
 {
   config,
   pkgs,
+  inputs,
   ...
 }: let
   hyprConfigPath = "${config.home.homeDirectory}/nixos-dotfiles/config/hypr";
+  system = pkgs.stdenv.hostPlatform.system;
 in {
   # Add Hyprland lua completions
   home.file."${hyprConfigPath}/.luarc.json".text = ''
@@ -40,10 +42,10 @@ in {
       xdg-desktop-portal-gtk
       xdg-desktop-portal
     ];
-    configPackages = with pkgs; [
-      xdg-desktop-portal-gtk
-      xdg-desktop-portal-hyprland
-      xdg-desktop-portal
+    configPackages = [
+      pkgs.xdg-desktop-portal-gtk
+      inputs.hyprland.packages.${system}.xdg-desktop-portal-hyprland
+      pkgs.xdg-desktop-portal
     ];
   };
 
@@ -83,6 +85,12 @@ in {
       progress-color = "#0db9d7";
       default-timeout = 5000;
       ignore-timeout = 1;
+      group-by = "app-name,summary,body";
+      width = 420;
+      outer-margin = 20;
+      padding = "10,15";
+      border-size = 2;
+      max-icon-size = 32;
       layer = "overlay";
       border-radius = 4;
       sort = "-time";

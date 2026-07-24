@@ -41,5 +41,6 @@
     bruno
     jdk21_headless
     bibata-cursors
+    ntfs3g
   ];
 }

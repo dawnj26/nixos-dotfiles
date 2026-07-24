@@ -18,4 +18,7 @@
       WantedBy = ["graphical-session.target"];
     };
   };
+
+  services.hypridle.enable = true;
+  services.udiskie.enable = true;
 }

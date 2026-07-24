@@ -36,5 +36,7 @@
     dbus.enable = true;
 
     fstrim.enable = true;
+
+    flatpak.enable = true;
   };
 }

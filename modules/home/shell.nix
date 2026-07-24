@@ -1,6 +1,7 @@
 {
   pkgs,
   config,
+  lib,
   ...
 }: let
   configPath = "${config.home.homeDirectory}/nixos-dotfiles";
@@ -12,6 +13,20 @@ in {
     autosuggestion.enable = true;
     syntaxHighlighting.enable = true;
 
+    initContent = lib.mkOrder 1000 ''
+      dc() {
+          (
+              cd "$1" || return
+              shift
+              docker compose "$@"
+          )
+      }
+      yt-transcript(){
+          yt-dlp --skip-download --write-subs --write-auto-subs --sub-lang en --sub-format ttml --convert-subs srt --output "transcript.%(ext)s" $1;
+          cat ./transcript.en.srt | sed '/^$/d' | grep -v '^[0-9]*$' | grep -v '\-->' | sed 's/<[^>]*>//g' | tr '\n' ' ' > output.txt;
+      }
+    '';
+
     envExtra = ''
       export LD_LIBRARY_PATH="${pkgs.oracle-instantclient.lib}/lib"
     '';
@@ -21,6 +36,9 @@ in {
       nru = "sudo nix flake update --flake ${configPath} && sudo nixos-rebuild switch --flake ${configPath}#laptop";
       x = "eza";
       lg = "lazygit";
+      erp-start = "dc \"$HOME/repos/oracle-db\" up -d";
+      erp-down = "dc \"$HOME/repos/oracle-db\" down";
+      erp-logs = "dc \"$HOME/repos/oracle-db\" logs -f";
     };
 
     history.size = 10000;
@@ -43,6 +61,7 @@ in {
       "--no-time"
     ];
   };
+
   programs.starship = {
     enable = true;
     presets = ["tokyo-night"];
@@ -52,8 +71,13 @@ in {
   home.packages = [
     (pkgs.writeShellApplication {
       name = "screenshot";
-      runtimeInputs = with pkgs; [grimblast coreutils];
-      text = builtins.readFile ../scripts/screenshot.sh;
+      runtimeInputs = with pkgs; [grim satty wl-clipboard slurp coreutils];
+      text = builtins.readFile ../../scripts/screenshot.sh;
+    })
+    (pkgs.writeShellApplication {
+      name = "screenrecord";
+      runtimeInputs = with pkgs; [jq];
+      text = builtins.readFile ../../scripts/screenrecord.sh;
     })
   ];
 }

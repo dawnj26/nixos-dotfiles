@@ -1,32 +1,25 @@
 {pkgs, ...}: {
   home.packages = with pkgs; [
     wl-clipboard
-    nur.repos.trev.helium
-    alacritty
     tree-sitter
     lazygit
     bottom
     nerd-fonts.jetbrains-mono
+    nerd-fonts.geist-mono
     nodejs
     python3
     lazygit
-    eza
     gh
-    rofi
     waybar
     btop
-    wlogout
     libreoffice
     nwg-look
-    mako
     networkmanagerapplet
     nautilus
     eog
     brightnessctl
     libnotify
-    grimblast
     qbittorrent
-    zoxide
     zed-editor
     corefonts
     xdg-desktop-portal-gtk
@@ -39,39 +32,19 @@
     blueman
     pavucontrol
     inter
-    papirus-icon-theme
-    tokyonight-gtk-theme
-    starship
     hyprpaper
     lazydocker
-    git
     vesktop
     obsidian
     pinta
-
-    # LSP
-    lua-language-server
-    vtsls
-    tailwindcss-language-server
-    yaml-language-server
-    emmet-ls
-    vscode-langservers-extracted
-    dockerfile-language-server
-    eslint_d
-    eslint
-    nixd
-    deadnix
-    package-version-server
-
-    # Linters & Formatters
-    hadolint
-    selene
-    stylua
-    prettier
-    alejandra
-
-    # Debuggers & Internal Binaries
-    python3Packages.debugpy
-    vscode-js-debug
+    papirus-icon-theme
+    tokyonight-gtk-theme
+    mpv
+    fastfetch
+    slurp
+    hyprpicker
+    foliate
+    yt-dlp
+    nur.repos.tnmt.brave-origin
   ];
 }

@@ -2,9 +2,9 @@
   home.sessionVariables = {
     HYPRCURSOR_THEME = "Bibata-Modern-Ice";
 
-    XCURSOR_THEME = "Bibata-Modern-Ice";
-    XCURSOR_SIZE = "24";
-
     QT_QPA_PLATFORM = "wayland;xcb";
+    TERMINAL = "alacritty";
+    EDITOR = "nvim";
+    VISUAL = "nvim";
   };
 }
