@@ -1,4 +1,10 @@
-{pkgs, ...}: {
+{
+  pkgs,
+  config,
+  ...
+}: let
+  configDir = "${config.home.homeDirectory}/nixos-dotfiles/config";
+in {
   systemd.user.services.polkit-gnome-authentication-agent-1 = {
     Unit = {
       Description = "Polkit Authentication Agent";
@@ -27,7 +33,7 @@
 
     Service = {
       Type = "simple";
-      ExecStart = "${pkgs.hyprmoncfg}/bin/hyprmoncfgd";
+      ExecStart = "${pkgs.hyprmoncfg}/bin/hyprmoncfgd --monitors-conf ${configDir}/hypr/monitors.lua --hypr-config ${configDir}/hypr/hyprland.lua";
       Restart = "on-failure";
       RestartSec = 2;
     };
