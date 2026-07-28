@@ -40,15 +40,15 @@
   "cpu": {
     "interval": 5,
     "format": "󰍛",
-    "on-click": "btop",
+    "on-click": "uwsm-app -- alacritty -e btop",
   },
   "clock#horizontal": {
-    "format": "{:L%A %H:%M}",
+    "format": "{:L%A %I:%M %p}",
     "format-alt": "{:L%d %B W%V %Y}",
     "tooltip": false,
   },
   "clock#vertical": {
-    "format": "{:%H\n  —\n%M}",
+    "format": "{:%I\n  —\n%M\n%p}",
     "format-alt": "{:L%d %B W%V %Y}",
     "tooltip": false,
   },
@@ -65,6 +65,7 @@
     "spacing": 1,
   },
   "battery": {
+    "on-click": "uwsm-app -- auto-cpufreq-gtk",
     "format": "{capacity}% {icon}",
     "format-discharging": "{icon}",
     "format-charging": "{icon}",
@@ -93,7 +94,7 @@
   },
   "pulseaudio": {
     "format": "{icon}",
-    "on-click": "pavucontrol",
+    "on-click": "uwsm-app -- pavucontrol",
     "on-click-right": "pamixer -t",
     "tooltip-format": "Playing at {volume}%",
     "scroll-step": 5,
@@ -110,13 +111,13 @@
   },
   "custom/power": {
     "tooltip": false,
-    "on-click": "uwsm app -- wlogout",
+    "on-click": "uwsm-app -- wlogout",
     "format": "⏼",
   },
   "custom/screenrecording-indicator": {
-    "exec": "screenrecord status",
+    "exec": "uwsm-app -- screenrecord status",
     "return-type": "json",
     "interval": 1,
-    "on-click": "screenrecord toggle",
+    "on-click": "uwsm-app -- screenrecord toggle",
   },
 }
