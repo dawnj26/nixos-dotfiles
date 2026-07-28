@@ -1,0 +1,41 @@
+{
+  "name": "Internal",
+  "created_at": "2026-07-28T12:31:36.021818988Z",
+  "updated_at": "2026-07-28T12:31:36.022061783Z",
+  "outputs": [
+    {
+      "key": "boe|0x07b5",
+      "match_key": "boe|0x07b5",
+      "name": "eDP-1",
+      "description": "BOE 0x07B5",
+      "make": "BOE",
+      "model": "0x07B5",
+      "enabled": true,
+      "mode": "1366x768@59.99Hz",
+      "width": 1366,
+      "height": 768,
+      "refresh": 59.99,
+      "x": 0,
+      "y": 0,
+      "scale": 1,
+      "transform": 0,
+      "bitdepth": 8,
+      "cm": "srgb",
+      "sdr_brightness": 1,
+      "sdr_saturation": 1,
+      "sdr_min_luminance": 0.2,
+      "sdr_max_luminance": 80,
+      "min_luminance": 0
+    }
+  ],
+  "workspaces": {
+    "enabled": false,
+    "strategy": "sequential",
+    "max_workspaces": 9,
+    "group_size": 3,
+    "monitor_order": [
+      "boe|0x07b5"
+    ]
+  },
+  "exec": ""
+}
