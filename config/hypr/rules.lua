@@ -31,3 +31,21 @@ hl.window_rule({
 	},
 	float = true,
 })
+
+hl.window_rule({
+	name = "Zed editor ERP Frontend",
+	match = {
+		initial_class = "dev.zed.Zed",
+		initial_title = "erp-frontend",
+	},
+	workspace = "2 silent",
+})
+
+hl.window_rule({
+	name = "Zed editor ERP Backend",
+	match = {
+		initial_class = "dev.zed.Zed",
+		initial_title = "erp-backend",
+	},
+	workspace = "3 silent",
+})
