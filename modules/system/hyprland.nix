@@ -13,5 +13,4 @@ in {
     portalPackage = inputs.hyprland.packages.${system}.xdg-desktop-portal-hyprland;
   };
   programs.uwsm.enable = true;
-  programs.monique.enable = true;
 }

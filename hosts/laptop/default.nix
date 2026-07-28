@@ -2,7 +2,6 @@
   imports = [
     ./hardware-configuration.nix
     inputs.nur.modules.nixos.default
-    inputs.monique.nixosModules.default
     inputs.auto-cpufreq.nixosModules.default
     inputs.home-manager.nixosModules.home-manager
     {
