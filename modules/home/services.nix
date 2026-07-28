@@ -19,6 +19,24 @@
     };
   };
 
+  systemd.user.services.hyprmoncfgd = {
+    Unit = {
+      Description = "Hyprland monitor profile daemon (hyprmoncfgd)";
+      After = ["graphical-session.target"];
+    };
+
+    Service = {
+      Type = "simple";
+      ExecStart = "${pkgs.hyprmoncfg}/bin/hyprmoncfgd";
+      Restart = "on-failure";
+      RestartSec = 2;
+    };
+
+    Install = {
+      WantedBy = ["graphical-session.target"];
+    };
+  };
+
   services.hypridle.enable = true;
   services.udiskie.enable = true;
 }
