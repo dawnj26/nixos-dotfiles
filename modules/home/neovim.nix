@@ -30,5 +30,13 @@
     # Debuggers & Internal Binaries
     python3Packages.debugpy
     vscode-js-debug
+
+    # Dependencies
+    wl-clipboard
+    tree-sitter
+    lazygit
+    bottom
+    nodejs
+    python3
   ];
 }

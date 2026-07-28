@@ -1,14 +1,5 @@
 {pkgs, ...}: {
   home.packages = with pkgs; [
-    wl-clipboard
-    tree-sitter
-    lazygit
-    bottom
-    nerd-fonts.jetbrains-mono
-    nerd-fonts.geist-mono
-    nodejs
-    python3
-    lazygit
     gh
     waybar
     btop
@@ -46,5 +37,6 @@
     foliate
     yt-dlp
     nur.repos.tnmt.brave-origin
+    proton-vpn
   ];
 }
