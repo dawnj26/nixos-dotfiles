@@ -32,6 +32,5 @@
       url = "github:xddxdd/nix-cachyos-kernel/release";
     };
     hyprland.url = "github:hyprwm/Hyprland";
-    monique.url = "github:ToRvaLDz/monique";
   };
 }
