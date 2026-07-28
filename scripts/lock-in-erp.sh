@@ -7,9 +7,7 @@ FRONTEND_PATH="$HOME/repos/erp-frontend"
 BACKEND_PATH="$HOME/repos/erp-backend"
 
 start_erp_db() {
-  docker compose --project-directory $PROJECT_PATH up -d
-  
-  if [ $? -eq 0 ]; then
+  if docker compose --project-directory "$ORACLE_PATH" up -d; then
     notify-send "Locked in" "ERP Database server started."
   else
     notify-send "Get up bro" "ERP Database server failed to start."
@@ -17,8 +15,7 @@ start_erp_db() {
 }
 
 open_editor() {
-  hyprctl dispatch "hl.dsp.exec_cmd(\"uwsm-app -- zeditor $FRONTEND_PATH\", { workspace = \"2 silent\" })"
-  hyprctl dispatch "hl.dsp.exec_cmd(\"uwsm-app -- zeditor $BACKEND_PATH\", { workspace = { \"3 silent\" } })"
+  uwsm-app -- zeditor --new "$FRONTEND_PATH" && uwsm-app -- zeditor --new "$BACKEND_PATH"
 }
 
 start_erp_db && open_editor
