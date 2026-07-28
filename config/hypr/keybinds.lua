@@ -6,6 +6,7 @@ hl.bind(mainMod .. " + Q", hl.dsp.exec_cmd(u.uwsm(g.terminal)))
 hl.bind(mainMod .. " + W", hl.dsp.exec_cmd(u.uwsm(g.browser)))
 hl.bind(mainMod .. " + E", hl.dsp.exec_cmd(u.uwsm(g.file_manager)))
 hl.bind(mainMod .. " + O", hl.dsp.exec_cmd(u.uwsm(g.notes)))
+hl.bind(mainMod .. " + P", hl.dsp.exec_cmd("lock-in-erp"))
 hl.bind(mainMod .. " + C", hl.dsp.window.close())
 hl.bind(mainMod .. " + V", hl.dsp.window.float({ action = "toggle" }))
 
