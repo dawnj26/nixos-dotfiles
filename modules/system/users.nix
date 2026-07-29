@@ -5,5 +5,6 @@
     description = "Donn Jayson";
     extraGroups = ["networkmanager" "wheel" "docker" "gamemode"];
     initialPassword = "wodotatop10weekly";
+    home = "/home/dawn";
   };
 }
