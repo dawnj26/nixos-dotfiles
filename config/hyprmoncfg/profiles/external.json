@@ -1,0 +1,67 @@
+{
+  "name": "External",
+  "created_at": "2026-07-29T16:53:58.008150405Z",
+  "updated_at": "2026-07-29T16:53:58.00848358Z",
+  "outputs": [
+    {
+      "key": "media4 inc|n2255|0000000000000",
+      "match_key": "media4 inc|n2255|0000000000000",
+      "name": "HDMI-A-1",
+      "description": "Media4 Inc N2255 0000000000000",
+      "make": "Media4 Inc",
+      "model": "N2255",
+      "serial": "0000000000000",
+      "enabled": true,
+      "mode": "1920x1080@75.00Hz",
+      "width": 1920,
+      "height": 1080,
+      "refresh": 75,
+      "x": 0,
+      "y": 0,
+      "scale": 1,
+      "transform": 0,
+      "bitdepth": 8,
+      "cm": "srgb",
+      "sdr_brightness": 1,
+      "sdr_saturation": 1,
+      "sdr_min_luminance": 0.2,
+      "sdr_max_luminance": 80,
+      "min_luminance": 0
+    },
+    {
+      "key": "boe|0x07b5",
+      "match_key": "boe|0x07b5",
+      "name": "eDP-1",
+      "description": "BOE 0x07B5",
+      "make": "BOE",
+      "model": "0x07B5",
+      "enabled": false,
+      "mode": "1366x768@59.99Hz",
+      "width": 1366,
+      "height": 768,
+      "refresh": 59.99,
+      "x": 0,
+      "y": 0,
+      "scale": 1,
+      "transform": 0,
+      "bitdepth": 8,
+      "cm": "srgb",
+      "sdr_brightness": 1,
+      "sdr_saturation": 1,
+      "sdr_min_luminance": 0.2,
+      "sdr_max_luminance": 80,
+      "min_luminance": 0
+    }
+  ],
+  "workspaces": {
+    "enabled": false,
+    "strategy": "sequential",
+    "max_workspaces": 9,
+    "group_size": 3,
+    "monitor_order": [
+      "media4 inc|n2255|0000000000000",
+      "boe|0x07b5"
+    ]
+  },
+  "exec": ""
+}
