@@ -1,12 +1,15 @@
 {...}: {
   virtualisation.docker.enable = true;
-  programs.zsh.enable = true;
-  programs.dconf.enable = true;
-  programs.hyprland.enable = true;
 
-  programs.gnupg.agent = {
-    enable = true;
-    enableSSHSupport = true;
+  programs = {
+    zsh.enable = true;
+    dconf.enable = true;
+    hyprland.enable = true;
+    gnupg.agent = {
+      enable = true;
+      enableSSHSupport = true;
+    };
+
+    gpu-screen-recorder.enable = true;
   };
-  programs.gpu-screen-recorder.enable = true;
 }
