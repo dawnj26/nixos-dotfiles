@@ -32,8 +32,8 @@ in {
     '';
 
     shellAliases = {
-      nrs = "sudo nixos-rebuild switch --flake ${configPath}";
-      nru = "sudo nix flake update --flake ${configPath} && sudo nixos-rebuild switch --flake ${configPath}#laptop";
+      nrs = "nh os switch -H laptop";
+      nru = "sudo nix flake update --flake ${configPath} && nrs";
       x = "eza";
       lg = "lazygit";
       erp-start = "dc \"$HOME/repos/oracle-db\" up -d";
