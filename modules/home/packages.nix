@@ -33,5 +33,6 @@
     yt-dlp
     proton-vpn
     hyprmoncfg
+    jetbrains.webstorm
   ];
 }
