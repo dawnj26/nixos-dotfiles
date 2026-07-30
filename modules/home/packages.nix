@@ -32,7 +32,6 @@
     hyprpicker
     foliate
     yt-dlp
-    nur.repos.tnmt.brave-origin
     proton-vpn
     hyprmoncfg
   ];
