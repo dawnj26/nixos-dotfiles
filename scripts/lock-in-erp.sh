@@ -15,7 +15,7 @@ start_erp_db() {
 }
 
 open_editor() {
-  uwsm-app -- zeditor --new "$FRONTEND_PATH" && uwsm-app -- zeditor --new "$BACKEND_PATH"
+  uwsm-app -- webstorm "$FRONTEND_PATH" && uwsm-app -- webstorm "$BACKEND_PATH"
 }
 
 start_erp_db && open_editor
