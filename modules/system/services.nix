@@ -12,10 +12,13 @@
       ];
     };
 
-    xserver.enable = true;
-    xserver.xkb = {
-      layout = "us";
-      variant = "";
+    xserver = {
+      enable = true;
+      xkb = {
+        layout = "us";
+        variant = "";
+      };
+      videoDrivers = ["amdgpu"];
     };
 
     printing.enable = true;

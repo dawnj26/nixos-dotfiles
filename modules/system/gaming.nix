@@ -4,8 +4,6 @@
     enable32Bit = true;
   };
 
-  services.xserver.videoDrivers = ["amdgpu"];
-
   programs.gamemode.enable = true;
   programs.steam = {
     enable = true;
