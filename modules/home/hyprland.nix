@@ -92,7 +92,6 @@ in {
       border-size = 2;
       max-icon-size = 32;
       layer = "overlay";
-      border-radius = 4;
       sort = "-time";
       font = "JetBrainsMono Nerd Font 12";
     };
