@@ -2,25 +2,24 @@
   lib,
   stdenv,
   fetchurl,
-  autoPatchelfHook,
   alsa-lib,
-  fontconfig,
-  glib,
-  openssl,
-  sqlite,
   wayland,
-  zlib,
-  zstd,
-  libgit2,
-  libxkbcommon,
-  libxcb,
   libGL,
   libx11,
   libxext,
   copyDesktopItems,
   nodejs,
   makeWrapper,
-  vulkan-loader,
+  libxcomposite,
+  libxdamage,
+  libxfixes,
+  libxrandr,
+  libdrm,
+  libgbm,
+  libva,
+  pipewire,
+  libpulseaudio,
+  libxkbcommon,
 }: let
   targets = {
     "x86_64-linux" = {
@@ -49,42 +48,65 @@ in
     nativeBuildInputs = [
       copyDesktopItems
       makeWrapper
-      autoPatchelfHook
     ];
 
     buildInputs = [
-      stdenv.cc.cc.lib
-      libgit2
-      sqlite
-      zlib
-      zstd
-      fontconfig
-      openssl
-      glib
       alsa-lib
-      libxkbcommon
-      wayland
-      libxcb
       libGL
+      wayland
       libx11
       libxext
-      vulkan-loader
+      libxcomposite
+      libxdamage
+      libxfixes
+      libxrandr
+      libdrm
+      libgbm
+      libva
+      pipewire
+      libpulseaudio
+      libxkbcommon
     ];
 
     dontConfigure = true;
     dontBuild = true;
 
     postFixup = ''
-        wrapProgram $out/libexec/zed-editor \
-          --set ZED_UPDATE_EXPLANATION "Zed has been installed using Nix. Auto-updates have thus been disabled." \
-          --set RELEASE_VERSION "${version}" \
-          --suffix PATH : ${lib.makeBinPath [nodejs]} \
-          --prefix LD_LIBRARY_PATH : ${lib.makeLibraryPath [
-        libxkbcommon
+      interpreter="$(cat "$NIX_CC/nix-support/dynamic-linker")"
+
+      rpath="$out/lib:${lib.makeLibraryPath [
+        stdenv.cc.cc.lib
+        alsa-lib
         libGL
-        vulkan-loader
         wayland
-      ]}
+        libx11
+        libxext
+        libxcomposite
+        libxdamage
+        libxfixes
+        libxrandr
+        libdrm
+        libgbm
+        libva
+        pipewire
+        libpulseaudio
+        libxkbcommon
+      ]}"
+
+      patchelf --set-interpreter "$interpreter" --add-rpath "$rpath" \
+        $out/libexec/zed-editor
+      patchelf --set-interpreter "$interpreter" --add-rpath "$rpath" \
+        $out/bin/zeditor
+
+      for so in $out/lib/*.so*; do
+        patchelf --add-rpath "$rpath" "$so"
+      done
+
+      wrapProgram $out/libexec/zed-editor \
+        --set ZED_UPDATE_EXPLANATION "Zed has been installed using Nix. Auto-updates have thus been disabled." \
+        --set RELEASE_VERSION "${version}" \
+        --suffix PATH : ${lib.makeBinPath [nodejs]} \
+        --prefix LD_LIBRARY_PATH : ${lib.makeLibraryPath [libxkbcommon]}
 
 
       if [ -f "$out/share/applications/dev.zed.Zed.desktop" ]; then
