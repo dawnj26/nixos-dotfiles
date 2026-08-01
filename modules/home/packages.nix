@@ -10,7 +10,6 @@
     brightnessctl
     libnotify
     qbittorrent
-    zed-editor
     corefonts
     xdg-desktop-portal-gtk
     xdg-desktop-portal
