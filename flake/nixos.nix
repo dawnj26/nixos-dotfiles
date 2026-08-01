@@ -12,4 +12,10 @@ in {
   flake.nixosConfigurations = {
     laptop = mkHost "laptop" "x86_64-linux";
   };
+  systems = [
+    "x86_64-linux"
+  ];
+  perSystem = {pkgs, ...}: {
+    packages.zed-editor-bin = pkgs.callPackage ../packages/zed-editor-bin.nix {};
+  };
 }
