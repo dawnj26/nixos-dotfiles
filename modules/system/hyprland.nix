@@ -9,7 +9,7 @@ in {
     enable = true;
     withUWSM = true;
     xwayland.enable = true;
-    package = inputs.hyprland.packages.${system}.hyprland;
+    package = pkgs.hyprland;
     portalPackage = inputs.hyprland.packages.${system}.xdg-desktop-portal-hyprland;
   };
 
