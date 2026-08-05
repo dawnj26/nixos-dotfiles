@@ -1,7 +1,7 @@
 local M = {}
 
 function M.uwsm(app)
-	return "uwsm-app -- " .. app
+	return "run " .. app
 end
 
 return M
