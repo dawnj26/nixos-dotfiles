@@ -1,10 +1,7 @@
 {
   pkgs,
-  inputs,
   ...
-}: let
-  system = pkgs.stdenv.hostPlatform.system;
-in {
+}:{
   programs.vscode = {
     enable = true;
     mutableExtensionsDir = true;
@@ -13,6 +10,10 @@ in {
 
   programs.zed-editor = {
     enable = true;
-    package = inputs.self.packages.${system}.zed-editor-bin;
+    package = pkgs.zed-editor-fhs;
   };
+
+  home.packages = with pkgs; [
+    nil
+  ];
 }
