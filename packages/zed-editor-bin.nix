@@ -20,15 +20,16 @@
   pipewire,
   libpulseaudio,
   libxkbcommon,
+  xkeyboard_config,
 }: let
   targets = {
     "x86_64-linux" = {
       architecture = "x86_64";
-      hash = "sha256-n1Y4vfKN0V3Y2C0JJXfoLebNPQ4MltJljiSmPfAlufU=";
+      hash = "sha256-RFCIhr7SR8dUT2S2bga9OI7D1AZ3a1RXhovBSmcTByQ=";
     };
     "aarch64-linux" = {
       architecture = "aarch64";
-      hash = "sha256-wfVd4tEto8fS6Hv+bUmJdlOk+vykqo8GoZCEOKg0amw=";
+      hash = "sha256-cIvzZCqGwaxzZ3ZLm0uzL8PJvBiq/fO1DitAH33xCNs=";
     };
   };
   target =
@@ -37,7 +38,7 @@
 in
   stdenv.mkDerivation rec {
     pname = "zed-editor-bin";
-    version = "1.13.1";
+    version = "1.13.2";
 
     src = fetchurl {
       url = "https://github.com/zed-industries/zed/releases/download/v${version}/zed-linux-${target.architecture}.tar.gz";
@@ -66,6 +67,7 @@ in
       pipewire
       libpulseaudio
       libxkbcommon
+      xkeyboard_config
     ];
 
     dontConfigure = true;
@@ -105,8 +107,8 @@ in
       wrapProgram $out/libexec/zed-editor \
         --set ZED_UPDATE_EXPLANATION "Zed has been installed using Nix. Auto-updates have thus been disabled." \
         --set RELEASE_VERSION "${version}" \
+        --set XKB_CONFIG_ROOT "${xkeyboard_config}/share/X11/xkb" \
         --suffix PATH : ${lib.makeBinPath [nodejs]} \
-        --prefix LD_LIBRARY_PATH : ${lib.makeLibraryPath [libxkbcommon]}
 
 
       if [ -f "$out/share/applications/dev.zed.Zed.desktop" ]; then
