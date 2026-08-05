@@ -33,5 +33,9 @@
     proton-vpn
     hyprmoncfg
     jetbrains.webstorm
+    cliphist
+    ani-cli
+    runapp
+    cine
   ];
 }
