@@ -84,5 +84,10 @@ in {
       runtimeInputs = with pkgs; [libnotify docker];
       text = builtins.readFile ../../scripts/lock-in-erp.sh;
     })
+    (pkgs.writeShellApplication {
+      name = "run";
+      runtimeInputs = with pkgs; [runapp];
+      text = builtins.readFile ../../scripts/run.sh;
+    })
   ];
 }
