@@ -32,7 +32,6 @@
     yt-dlp
     proton-vpn
     hyprmoncfg
-    jetbrains.webstorm
     cliphist
     ani-cli
     runapp
