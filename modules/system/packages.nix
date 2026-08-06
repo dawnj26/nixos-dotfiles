@@ -1,46 +1,29 @@
-{pkgs, ...}: {
-  environment.systemPackages = with pkgs; [
-    git
-    vim
-    wget
-    tealdeer
-    neovim
-    bat
-    ripgrep
-    gdu
-    unzip
-    curl
-    gcc
-    fzf
-    fd
-    cargo
-    gnumake
-    zsh
-    p7zip
-    xhost
-    gnome-keyring
-    polkit_gnome
-    clang
-    gcc
-    unrar
-    zip
-    hyprland
-    kitty
-    uwsm
-    hyprcursor
-    hyprpaper
-    heroic
-    lutris
-    protonup-qt
-    mangohud
-    winetricks
-    gamescope
-    gamemode
-    umu-launcher
-    oracle-instantclient
-    bruno
-    jdk21_headless
-    bibata-cursors
-    ntfs3g
-  ];
+{
+  flake.nixosModules.packages = { pkgs, ... }: {
+    environment.systemPackages = with pkgs; [
+      git
+      vim
+      wget
+      tealdeer
+      neovim
+      bat
+      ripgrep
+      gdu
+      unzip
+      curl
+      fzf
+      fd
+      gnumake
+      p7zip
+      xhost
+      gnome-keyring
+      polkit_gnome
+      unrar
+      zip
+      bibata-cursors
+      ntfs3g
+    ];
+  }
+
+  ;
 }

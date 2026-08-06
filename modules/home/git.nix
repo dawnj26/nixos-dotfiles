@@ -1,18 +1,20 @@
-{...}: {
-  programs.git = {
-    enable = true;
+{
+  flake.homeModules.git = {
+    programs.git = {
+      enable = true;
 
-    settings = {
-      user = {
-        name = "Donn Jayson Quinto";
-        email = "jaysonquinto1@outlook.com";
+      settings = {
+        user = {
+          name = "Donn Jayson Quinto";
+          email = "jaysonquinto1@outlook.com";
+        };
+
+        init.defaultBranch = "main";
+        pull.rebase = false;
+        core.editor = "nvim";
+        push.autoSetupRemote = true;
+        credential.helper = "";
       };
-
-      init.defaultBranch = "main";
-      pull.rebase = false;
-      core.editor = "nvim";
-      push.autoSetupRemote = true;
-      credential.helper = "";
     };
   };
 }

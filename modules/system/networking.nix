@@ -1,14 +1,17 @@
-{...}: {
-  networking = {
-    wireless.enable = true;
-    networkmanager.enable = true;
+{
+  flake.nixosModules.networking = {
 
-    firewall = {
-      enable = true;
+    networking = {
+      wireless.enable = true;
+      networkmanager.enable = true;
 
-      allowPing = true;
-      allowedTCPPorts = [];
-      allowedUDPPorts = [];
+      firewall = {
+        enable = true;
+
+        allowPing = true;
+        allowedTCPPorts = [ ];
+        allowedUDPPorts = [ ];
+      };
     };
   };
 }

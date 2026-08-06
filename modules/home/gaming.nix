@@ -1,12 +1,14 @@
-{pkgs, ...}: {
-  programs.lutris = {
-    enable = true;
-    extraPackages = with pkgs; [
-      mangohud
-      winetricks
-      gamescope
-      gamemode
-      umu-launcher
-    ];
+{
+  flake.homeModules.gaming = { pkgs, ... }: {
+    programs.lutris = {
+      enable = true;
+      extraPackages = with pkgs; [
+        mangohud
+        winetricks
+        gamescope
+        gamemode
+        umu-launcher
+      ];
+    };
   };
 }

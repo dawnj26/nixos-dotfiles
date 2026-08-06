@@ -2,9 +2,11 @@
   inputs,
   pkgs,
   ...
-}: let
+}:
+let
   system = pkgs.stdenv.hostPlatform.system;
-in {
+in
+{
   nixpkgs.config = {
     allowUnfree = true;
   };
@@ -12,8 +14,6 @@ in {
   nixpkgs.overlays = [
     inputs.nix-cachyos-kernel.overlays.pinned
     (final: prev: {
-      gtk-engine-murrine = inputs.nixpkgs-stable.legacyPackages.${prev.stdenv.hostPlatform.system}.gtk-engine-murrine;
-      tokyonight-gtk-theme = inputs.nixpkgs-stable.legacyPackages.${prev.stdenv.hostPlatform.system}.tokyonight-gtk-theme;
       ani-cli = prev.ani-cli.overrideAttrs (_: rec {
         version = "5.0";
 
@@ -25,12 +25,10 @@ in {
         };
       });
       hyprland = inputs.hyprland.packages.${system}.hyprland.overrideAttrs (oldAttrs: {
-        buildInputs = (oldAttrs.buildInputs or []) ++ [final.glaze];
-        cmakeFlags =
-          (oldAttrs.cmakeFlags or [])
-          ++ [
-            "-Dglaze_DIR=${final.glaze}/lib/cmake/glaze"
-          ];
+        buildInputs = (oldAttrs.buildInputs or [ ]) ++ [ final.glaze ];
+        cmakeFlags = (oldAttrs.cmakeFlags or [ ]) ++ [
+          "-Dglaze_DIR=${final.glaze}/lib/cmake/glaze"
+        ];
       });
     })
   ];

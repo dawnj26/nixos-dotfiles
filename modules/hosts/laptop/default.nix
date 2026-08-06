@@ -11,8 +11,9 @@
         home-manager = {
           useGlobalPkgs = true;
           useUserPackages = true;
-          extraSpecialArgs = { inherit inputs; };
-          users.dawn = ../../modules/home/_home.nix;
+          users.dawn.imports = [
+            config.flake.homeModules.dawn
+          ];
           backupFileExtension = "backup";
         };
       }

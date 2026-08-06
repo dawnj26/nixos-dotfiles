@@ -1,9 +1,11 @@
-{...}: {
-  services.walker = {
-    enable = true;
-    systemd.enable = true;
-    enableElephantIntegration = true;
-  };
+{
+  flake.homeModules.walker = {
+    services.walker = {
+      enable = true;
+      systemd.enable = true;
+      enableElephantIntegration = true;
+    };
 
-  services.elephant.enable = true;
+    services.elephant.enable = true;
+  };
 }
