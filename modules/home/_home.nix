@@ -4,6 +4,7 @@
   home.stateVersion = "26.05";
 
   imports = [
+    inputs.helium.homeModules.default
     (inputs.import-tree ./.)
   ];
 }

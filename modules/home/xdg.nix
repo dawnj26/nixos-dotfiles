@@ -1,5 +1,5 @@
 {...}: let
-  browser = "brave-origin.desktop";
+  browser = "helium.desktop";
   pdf = browser;
   image = "org.gnome.eog.desktop";
   video = "mpv.desktop";

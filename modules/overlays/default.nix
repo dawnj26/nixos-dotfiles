@@ -10,6 +10,7 @@ in {
   };
 
   nixpkgs.overlays = [
+    inputs.helium.overlays.default
     inputs.nix-cachyos-kernel.overlays.pinned
     (final: prev: {
       gtk-engine-murrine = inputs.nixpkgs-stable.legacyPackages.${prev.stdenv.hostPlatform.system}.gtk-engine-murrine;

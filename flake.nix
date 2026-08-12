@@ -33,5 +33,9 @@
       url = "github:xddxdd/nix-cachyos-kernel/release";
     };
     hyprland.url = "github:hyprwm/Hyprland";
+    helium = {
+      url = "github:oxcl/nix-flake-helium-browser";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 }
