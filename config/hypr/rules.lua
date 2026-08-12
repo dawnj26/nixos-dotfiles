@@ -14,8 +14,8 @@ hl.window_rule({
 	float = true,
 	center = true,
 	size = {
-		"(monitor_w * 0.45)",
-		"(monitor_h * 0.60)",
+		"(monitor_w * 0.70)",
+		"(monitor_h * 0.90)",
 	},
 })
 
@@ -27,8 +27,8 @@ hl.window_rule({
 	float = true,
 	center = true,
 	size = {
-		"(monitor_w * 0.50)",
-		"(monitor_h * 0.65)",
+		"(monitor_w * 0.70)",
+		"(monitor_h * 0.90)",
 	},
 })
 
@@ -51,8 +51,8 @@ hl.window_rule({
 	float = true,
 	center = true,
 	size = {
-		"(monitor_w * 0.45)",
-		"(monitor_h * 0.60)",
+		"(monitor_w * 0.70)",
+		"(monitor_h * 0.90)",
 	},
 })
 
@@ -65,8 +65,8 @@ hl.window_rule({
 	float = true,
 	center = true,
 	size = {
-		"(monitor_w * 0.60)",
-		"(monitor_h * 0.80)",
+		"(monitor_w * 0.70)",
+		"(monitor_h * 0.90)",
 	},
 })
 
@@ -87,8 +87,8 @@ hl.window_rule({
 	float = true,
 	center = true,
 	size = {
-		"(monitor_w * 0.55)",
-		"(monitor_h * 0.70)",
+		"(monitor_w * 0.70)",
+		"(monitor_h * 0.90)",
 	},
 })
 
@@ -100,8 +100,8 @@ hl.window_rule({
 	float = true,
 	center = true,
 	size = {
-		"(monitor_w * 0.55)",
-		"(monitor_h * 0.70)",
+		"(monitor_w * 0.70)",
+		"(monitor_h * 0.90)",
 	},
 })
 
@@ -114,8 +114,8 @@ hl.window_rule({
 	float = true,
 	center = true,
 	size = {
-		"(monitor_w * 0.65)",
-		"(monitor_h * 0.80)",
+		"(monitor_w * 0.70)",
+		"(monitor_h * 0.90)",
 	},
 })
 
