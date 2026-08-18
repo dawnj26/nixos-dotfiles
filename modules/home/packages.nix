@@ -32,5 +32,7 @@
     ani-cli
     runapp
     cine
+    adw-gtk3
+    qt6Packages.qt6ct
   ];
 }
