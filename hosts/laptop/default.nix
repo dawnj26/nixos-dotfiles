@@ -2,6 +2,7 @@
   imports = [
     ./hardware-configuration.nix
     inputs.nur.modules.nixos.default
+    inputs.noctalia-greeter.nixosModules.default
     inputs.home-manager.nixosModules.home-manager
     {
       home-manager.useGlobalPkgs = true;
