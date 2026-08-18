@@ -61,8 +61,8 @@ in {
       gtk-application-prefer-dark-theme = 1;
     };
     theme = {
-      name = "Tokyonight-Dark";
-      package = pkgs.tokyonight-gtk-theme;
+      name = "";
+      package = pkgs.adw-gtk3;
     };
     font = {
       name = "Inter";
