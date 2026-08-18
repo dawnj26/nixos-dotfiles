@@ -66,8 +66,8 @@ in {
 
   programs.starship = {
     enable = true;
-    presets = ["tokyo-night"];
     enableZshIntegration = true;
+    configPath = starshipPath;
   };
 
   home.packages = [
