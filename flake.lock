@@ -33,26 +33,6 @@
         "type": "github"
       }
     },
-    "auto-cpufreq": {
-      "inputs": {
-        "nixpkgs": [
-          "nixpkgs"
-        ]
-      },
-      "locked": {
-        "lastModified": 1785769695,
-        "narHash": "sha256-L5fiMprAnyZniE4GKfyFW9pSh/yMBua95G6eD+1FaOE=",
-        "owner": "AdnanHodzic",
-        "repo": "auto-cpufreq",
-        "rev": "53d55c288a4ec2eb926c2bd8f45819459d941e60",
-        "type": "github"
-      },
-      "original": {
-        "owner": "AdnanHodzic",
-        "repo": "auto-cpufreq",
-        "type": "github"
-      }
-    },
     "flake-compat": {
       "flake": false,
       "locked": {
