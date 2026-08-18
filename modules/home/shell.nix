@@ -4,7 +4,9 @@
   lib,
   ...
 }: let
-  configPath = "${config.home.homeDirectory}/nixos-dotfiles";
+  homePath = config.home.homeDirectory;
+  configPath = "${homePath}/nixos-dotfiles";
+  starshipPath = "${configPath}/config/starship.toml";
 in {
   programs.zsh = {
     enable = true;
