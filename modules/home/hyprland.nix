@@ -61,8 +61,8 @@ in {
       gtk-application-prefer-dark-theme = 1;
     };
     theme = {
-      name = "Tokyonight-Dark";
-      package = pkgs.tokyonight-gtk-theme;
+      name = "";
+      package = pkgs.adw-gtk3;
     };
     font = {
       name = "Inter";
@@ -72,32 +72,6 @@ in {
 
   qt = {
     enable = true;
-    style.name = "kvantum";
-    platformTheme.name = "qtct";
-  };
-
-  services.mako = {
-    enable = true;
-    settings = {
-      background-color = "#1a1b26";
-      text-color = "#a9b1d6";
-      border-color = "#0db9d7";
-      progress-color = "#0db9d7";
-      default-timeout = 5000;
-      ignore-timeout = 1;
-      group-by = "app-name,summary,body";
-      width = 420;
-      outer-margin = 20;
-      padding = "10,15";
-      border-size = 2;
-      max-icon-size = 32;
-      layer = "overlay";
-      sort = "-time";
-      font = "JetBrainsMono Nerd Font 12";
-    };
-    extraConfig = ''
-      [urgency=high]
-      border-color=#ff7a93
-    '';
+    platformTheme.name = "qt6ct";
   };
 }

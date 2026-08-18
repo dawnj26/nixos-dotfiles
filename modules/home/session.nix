@@ -1,4 +1,4 @@
-{...}: {
+{
   home.sessionVariables = {
     HYPRCURSOR_THEME = "Bibata-Modern-Ice";
 

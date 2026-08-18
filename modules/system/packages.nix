@@ -19,7 +19,6 @@
     p7zip
     xhost
     gnome-keyring
-    polkit_gnome
     clang
     gcc
     unrar
@@ -28,7 +27,6 @@
     kitty
     uwsm
     hyprcursor
-    hyprpaper
     heroic
     lutris
     protonup-qt
@@ -42,5 +40,6 @@
     jdk21_headless
     bibata-cursors
     ntfs3g
+    gparted
   ];
 }

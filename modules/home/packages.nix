@@ -4,7 +4,6 @@
     btop
     libreoffice
     nwg-look
-    networkmanagerapplet
     nautilus
     eog
     brightnessctl
@@ -14,16 +13,13 @@
     xdg-desktop-portal-gtk
     xdg-desktop-portal
     wayland-logout
-    blueman
     pavucontrol
     inter
-    hyprpaper
     lazydocker
     vesktop
     obsidian
     pinta
     papirus-icon-theme
-    tokyonight-gtk-theme
     mpv
     fastfetch
     slurp
@@ -36,5 +32,7 @@
     ani-cli
     runapp
     cine
+    adw-gtk3
+    qt6Packages.qt6ct
   ];
 }

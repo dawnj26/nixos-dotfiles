@@ -13,8 +13,6 @@ in {
     inputs.helium.overlays.default
     inputs.nix-cachyos-kernel.overlays.pinned
     (final: prev: {
-      gtk-engine-murrine = inputs.nixpkgs-stable.legacyPackages.${prev.stdenv.hostPlatform.system}.gtk-engine-murrine;
-      tokyonight-gtk-theme = inputs.nixpkgs-stable.legacyPackages.${prev.stdenv.hostPlatform.system}.tokyonight-gtk-theme;
       ani-cli = prev.ani-cli.overrideAttrs (_: rec {
         version = "5.0";
 

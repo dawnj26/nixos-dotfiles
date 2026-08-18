@@ -1,3 +1,4 @@
 config/hypr/.luarc.json
 config/hypr/monitors.lua
+config/hypr/noctalia.lua
 

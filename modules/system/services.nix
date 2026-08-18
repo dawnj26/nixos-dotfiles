@@ -1,16 +1,6 @@
-{pkgs, ...}: {
+{
   services = {
     openssh.enable = true;
-
-    displayManager.sddm = {
-      enable = true;
-      autoNumlock = true;
-      enableHidpi = true;
-      theme = "${pkgs.elegant-sddm}/share/sddm/themes/Elegant";
-      extraPackages = with pkgs; [
-        elegant-sddm
-      ];
-    };
 
     xserver = {
       enable = true;
@@ -41,5 +31,7 @@
     fstrim.enable = true;
 
     flatpak.enable = true;
+
+    power-profiles-daemon.enable = true;
   };
 }

@@ -4,7 +4,9 @@
   lib,
   ...
 }: let
-  configPath = "${config.home.homeDirectory}/nixos-dotfiles";
+  homePath = config.home.homeDirectory;
+  configPath = "${homePath}/nixos-dotfiles";
+  starshipPath = "${configPath}/config/starship.toml";
 in {
   programs.zsh = {
     enable = true;
@@ -32,7 +34,7 @@ in {
     '';
 
     shellAliases = {
-      nrs = "nh os switch -H laptop";
+      nrs = "nh os switch -H laptop --accept-flake-config";
       nru = "sudo nix flake update --flake ${configPath} && nrs";
       x = "eza";
       lg = "lazygit";
@@ -64,21 +66,11 @@ in {
 
   programs.starship = {
     enable = true;
-    presets = ["tokyo-night"];
     enableZshIntegration = true;
+    configPath = starshipPath;
   };
 
   home.packages = [
-    (pkgs.writeShellApplication {
-      name = "screenshot";
-      runtimeInputs = with pkgs; [grim satty wl-clipboard slurp coreutils];
-      text = builtins.readFile ../../scripts/screenshot.sh;
-    })
-    (pkgs.writeShellApplication {
-      name = "screenrecord";
-      runtimeInputs = with pkgs; [jq];
-      text = builtins.readFile ../../scripts/screenrecord.sh;
-    })
     (pkgs.writeShellApplication {
       name = "lock-in-erp";
       runtimeInputs = with pkgs; [libnotify docker];

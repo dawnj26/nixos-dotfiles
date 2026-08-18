@@ -7,6 +7,15 @@ hl.window_rule({
 })
 
 hl.window_rule({
+	match = { class = "dev.noctalia.Noctalia" },
+	float = true,
+	size = {
+		"(monitor_w * 0.70)",
+		"(monitor_h * 0.90)",
+	},
+})
+
+hl.window_rule({
 	name = "Volume Control",
 	match = {
 		class = "org\\.pulseaudio\\.pavucontrol|com\\.saivert\\.pwvucontrol",
