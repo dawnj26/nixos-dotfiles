@@ -72,16 +72,6 @@ in {
 
   home.packages = [
     (pkgs.writeShellApplication {
-      name = "screenshot";
-      runtimeInputs = with pkgs; [grim satty wl-clipboard slurp coreutils];
-      text = builtins.readFile ../../scripts/screenshot.sh;
-    })
-    (pkgs.writeShellApplication {
-      name = "screenrecord";
-      runtimeInputs = with pkgs; [jq];
-      text = builtins.readFile ../../scripts/screenrecord.sh;
-    })
-    (pkgs.writeShellApplication {
       name = "lock-in-erp";
       runtimeInputs = with pkgs; [libnotify docker];
       text = builtins.readFile ../../scripts/lock-in-erp.sh;
