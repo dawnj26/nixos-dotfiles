@@ -34,7 +34,7 @@ in {
     '';
 
     shellAliases = {
-      nrs = "nh os switch -H laptop";
+      nrs = "nh os switch -H laptop --accept-flake-config";
       nru = "sudo nix flake update --flake ${configPath} && nrs";
       x = "eza";
       lg = "lazygit";
