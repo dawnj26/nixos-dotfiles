@@ -3,7 +3,7 @@
     isNormalUser = true;
     shell = pkgs.zsh;
     description = "Donn Jayson";
-    extraGroups = ["networkmanager" "wheel" "docker" "gamemode"];
+    extraGroups = ["networkmanager" "wheel" "docker" "gamemode" "input"];
     initialPassword = "wodotatop10weekly";
     home = "/home/dawn";
   };
