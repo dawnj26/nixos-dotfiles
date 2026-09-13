@@ -67,14 +67,15 @@ in {
         };
       };
 
-      plugins = {
-        auto_update = true;
-        enabled = [
-          "noctalia/screen_recorder"
-          "noctalia/wallhaven"
-          "noctalia/kaomoji"
-        ];
-      };
+      # plugins = {
+      #   auto_update = "all";
+      #   enabled = [
+      #     "noctalia/screen_recorder"
+      #     "noctalia/wallhaven"
+      #     "noctalia/kaomoji"
+      #     "nightwatch75/dns-switcher"
+      #   ];
+      # };
 
       shell = {
         font_family = "Inter";
@@ -100,6 +101,7 @@ in {
         templates = {
           builtin_ids = [
             "alacritty"
+            "foot"
             "gtk3"
             "gtk4"
             "hyprland"
