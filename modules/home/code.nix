@@ -1,7 +1,4 @@
-{
-  pkgs,
-  ...
-}:{
+{pkgs, ...}: {
   programs.vscode = {
     enable = true;
     mutableExtensionsDir = true;
@@ -10,7 +7,7 @@
 
   programs.zed-editor = {
     enable = true;
-    package = pkgs.zed-editor-fhs;
+    package = pkgs.zed-editor-bin;
   };
 
   home.packages = with pkgs; [
