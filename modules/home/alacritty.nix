@@ -1,26 +1,14 @@
-{
+{config, ...}: let
+  configDir = "${config.home.homeDirectory}/nixos-dotfiles/config";
+in {
   programs.alacritty = {
     enable = true;
-    settings = {
-      font = {
-        size = 14;
-        normal = {
-          family = "JetBrainsMono Nerd Font";
-          style = "Regular";
-        };
-        bold = {
-          family = "JetBrainsMono Nerd Font";
-          style = "Bold";
-        };
-        italic = {
-          family = "JetBrainsMono Nerd Font";
-          style = "Italic";
-        };
-        bold_italic = {
-          family = "JetBrainsMono Nerd Font";
-          style = "Bold Italic";
-        };
-      };
-    };
   };
+
+  programs.foot = {
+    enable = true;
+  };
+
+  xdg.configFile."alacritty".source = config.lib.file.mkOutOfStoreSymlink "${configDir}/alacritty";
+  xdg.configFile."foot".source = config.lib.file.mkOutOfStoreSymlink "${configDir}/foot";
 }
