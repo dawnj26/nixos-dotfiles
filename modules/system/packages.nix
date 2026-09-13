@@ -41,5 +41,10 @@
     bibata-cursors
     ntfs3g
     gparted
+    (pkgs.writeShellApplication {
+      name = "run";
+      runtimeInputs = with pkgs; [runapp];
+      text = builtins.readFile ../../scripts/run.sh;
+    })
   ];
 }
