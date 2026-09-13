@@ -4,7 +4,6 @@
     btop
     libreoffice
     nwg-look
-    nautilus
     eog
     brightnessctl
     libnotify
@@ -34,5 +33,9 @@
     cine
     adw-gtk3
     qt6Packages.qt6ct
+    bun
+    ngrok
+    spicetify-cli
+    evtest
   ];
 }
