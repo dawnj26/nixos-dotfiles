@@ -31,6 +31,15 @@ in {
             "-Dglaze_DIR=${final.glaze}/lib/cmake/glaze"
           ];
       });
+      bun = prev.bun.overrideAttrs (_: rec {
+        version = "1.4.0";
+
+        src = prev.fetchurl {
+          url = "https://github.com/oven-sh/bun/releases/download/bun-v${version}/bun-linux-x64-baseline.zip";
+          hash = "sha256-GE+0WV8NQBohfPfHjBvEMLqDMU2reouUgFurv3+nCX8=";
+        };
+      });
+      zed-editor-bin = inputs.self.packages.${system}.zed-editor-bin;
     })
   ];
 }
