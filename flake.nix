@@ -1,11 +1,6 @@
 {
   description = "NixOS Configuration";
 
-  nixConfig = {
-    extra-substituters = ["https://noctalia.cachix.org"];
-    extra-trusted-public-keys = ["noctalia.cachix.org-1:pCOR47nnMEo5thcxNDtzWpOxNFQsBRglJzxWPp3dkU4="];
-  };
-
   outputs = {
     flake-parts,
     import-tree,
@@ -33,18 +28,9 @@
     nix-cachyos-kernel = {
       url = "github:xddxdd/nix-cachyos-kernel/release";
     };
-    hyprland.url = "github:hyprwm/Hyprland/52b368f1d7fdee1b0e96ef3dc655b5a577df4fdb";
+    hyprland.url = "github:hyprwm/Hyprland";
     helium = {
       url = "github:oxcl/nix-flake-helium-browser";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
-    noctalia = {
-      url = "github:noctalia-dev/noctalia/cachix";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-    noctalia-greeter = {
-      url = "github:noctalia-dev/noctalia-greeter";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
