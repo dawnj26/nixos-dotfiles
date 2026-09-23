@@ -163,3 +163,13 @@ hl.window_rule({
 	},
 	workspace = "3 silent",
 })
+
+hl.window_rule({
+	name = "float-thunar-dialogs",
+	match = {
+		class = "^(thunar)$",
+		title = "^(Rename.*|Properties|Confirm to replace files|Create.*|Trash|Authentication)",
+	},
+	float = true,
+	center = true,
+})
