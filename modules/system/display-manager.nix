@@ -1,8 +1,7 @@
 {pkgs, ...}: {
-  programs.noctalia-greeter = {
+  services.displayManager.noctalia-greeter = {
     enable = true;
 
-    greeter-args = "";
     settings = {
       appearance = {
         hide_logo = true;
