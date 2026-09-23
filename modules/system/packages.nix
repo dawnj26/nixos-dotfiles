@@ -41,6 +41,7 @@
     bibata-cursors
     ntfs3g
     gparted
+    winboat
     (pkgs.writeShellApplication {
       name = "run";
       runtimeInputs = with pkgs; [runapp];
