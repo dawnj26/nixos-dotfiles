@@ -25,7 +25,7 @@
   perPlatform = {
     x86_64-linux = {
       arch = "x86_64";
-      hash = "sha256-xaz/LlKsPGSJDM6FJQc0z3J5wd5W1ZJuT04dTPZ2NZw=";
+      hash = "sha256-ZH3IXgn82ZzRdTZaibe3DM+WRpxIROuK5uuD36gvdgA=";
     };
     aarch64-linux = {
       arch = "aarch64";
@@ -38,7 +38,7 @@
 in
   stdenv.mkDerivation rec {
     pname = "zed-editor-bin";
-    version = "1.19.2";
+    version = "1.20.2";
 
     src = fetchurl {
       url = "https://github.com/zed-industries/zed/releases/download/v${version}/zed-linux-${platform.arch}.tar.gz";
