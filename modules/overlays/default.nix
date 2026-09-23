@@ -10,7 +10,6 @@ in {
   };
 
   nixpkgs.overlays = [
-    inputs.helium.overlays.default
     inputs.nix-cachyos-kernel.overlays.pinned
     (final: prev: {
       ani-cli = prev.ani-cli.overrideAttrs (_: rec {
