@@ -67,16 +67,6 @@ in {
         };
       };
 
-      # plugins = {
-      #   auto_update = "all";
-      #   enabled = [
-      #     "noctalia/screen_recorder"
-      #     "noctalia/wallhaven"
-      #     "noctalia/kaomoji"
-      #     "nightwatch75/dns-switcher"
-      #   ];
-      # };
-
       shell = {
         font_family = "Inter";
         launch_apps_as_systemd_services = true;
