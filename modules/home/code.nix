@@ -12,5 +12,7 @@
 
   home.packages = with pkgs; [
     nil
+    just
+    typescript
   ];
 }
