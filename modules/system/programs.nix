@@ -1,7 +1,16 @@
-{config, ...}: let
+{
+  config,
+  pkgs,
+  ...
+}: let
   homeDir = config.users.users.dawn.home;
 in {
   virtualisation.docker.enable = true;
+
+  virtualisation.podman = {
+    enable = true;
+    defaultNetwork.settings.dns_enabled = true;
+  };
 
   programs = {
     zsh.enable = true;
@@ -20,6 +29,17 @@ in {
         extraArgs = "--keep 3 --keep-since 3d --optimise";
       };
       flake = "${homeDir}/nixos-dotfiles";
+    };
+
+    nix-ld = {
+      enable = true;
+      libraries = with pkgs; [
+        stdenv.cc.cc.lib
+        zlib
+        openssl
+        icu
+        curl
+      ];
     };
   };
 }
