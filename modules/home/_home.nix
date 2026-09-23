@@ -5,7 +5,6 @@
 
   imports = [
     inputs.helium.homeModules.default
-    inputs.noctalia.homeModules.default
     (inputs.import-tree ./.)
   ];
 }
