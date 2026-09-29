@@ -22,14 +22,6 @@ in {
           hash = "sha256-rRQESi0Skoyf1jy/dRRK6ooKRPQhkak107kk5ulwZYI=";
         };
       });
-      hyprland = inputs.hyprland.packages.${system}.hyprland.overrideAttrs (oldAttrs: {
-        buildInputs = (oldAttrs.buildInputs or []) ++ [final.glaze];
-        cmakeFlags =
-          (oldAttrs.cmakeFlags or [])
-          ++ [
-            "-Dglaze_DIR=${final.glaze}/lib/cmake/glaze"
-          ];
-      });
       bun = prev.bun.overrideAttrs (_: rec {
         version = "1.4.0";
 
