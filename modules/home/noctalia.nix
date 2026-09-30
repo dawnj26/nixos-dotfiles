@@ -69,7 +69,7 @@ in {
 
       shell = {
         font_family = "Inter";
-        launch_apps_as_systemd_services = true;
+        launch_apps_custom_command = "runapp $CMD";
         polkit_agent = true;
         time_format = "{:%I:%M %p}";
 
