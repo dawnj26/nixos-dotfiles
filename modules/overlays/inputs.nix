@@ -1,7 +1,5 @@
 {inputs, ...}: {
-  flake.modules.nixos.overlays = {pkgs, ...}: let
-    system = pkgs.stdenv.hostPlatform.system;
-  in {
+  flake.modules.nixos.overlays = {pkgs, ...}: {
     nixpkgs.config.allowUnfree = true;
 
     imports = [
@@ -10,8 +8,9 @@
 
     nixpkgs.overlays = [
       inputs.nix-cachyos-kernel.overlays.pinned
-      (final: prev: {
-        zed-editor-bin = inputs.self.packages.${system}.zed-editor-bin;
+      (_: _: {
+        zed-editor-bin = pkgs.callPackage ../../packages/zed-editor-bin.nix {};
+        manager-io = pkgs.callPackage ../../packages/manager-io.nix {};
       })
     ];
   };
