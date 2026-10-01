@@ -25,7 +25,7 @@
   perPlatform = {
     x86_64-linux = {
       arch = "x86_64";
-      hash = "sha256-HHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHH=";
+      hash = "sha256-XOOZGzSo+tCiNiX1ghzaYBxxUKbMaWg8CXuNGwg6vFA=";
     };
     aarch64-linux = {
       arch = "aarch64";
