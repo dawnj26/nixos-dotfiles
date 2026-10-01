@@ -7,6 +7,7 @@
       obsidian
       proton-vpn
       spicetify-cli
+      manager-io
     ];
   };
 }
