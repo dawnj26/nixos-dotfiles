@@ -17,6 +17,6 @@
       };
     };
 
-    home.packages = with pkgs; [gnumake bruno lazydocker bun ngrok];
+    home.packages = with pkgs; [gnumake bruno lazydocker bun ngrok nix-init];
   };
 }
