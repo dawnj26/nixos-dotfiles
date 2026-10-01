@@ -4,8 +4,6 @@ in {
   flake.modules.nixos.base = {config, ...}: let
     homeDir = config.users.users.${cfg.owner.username}.home;
   in {
-    nixpkgs.config.allowUnfree = true;
-
     nix.settings = {
       experimental-features = ["nix-command" "flakes"];
       auto-optimise-store = true;

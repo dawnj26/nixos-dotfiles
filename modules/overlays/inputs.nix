@@ -2,6 +2,8 @@
   flake.modules.nixos.overlays = {pkgs, ...}: let
     system = pkgs.stdenv.hostPlatform.system;
   in {
+    nixpkgs.config.allowUnfree = true;
+
     imports = [
       inputs.nur.modules.nixos.default
     ];
