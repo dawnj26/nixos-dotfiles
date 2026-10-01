@@ -1,0 +1,70 @@
+{config, ...}: {
+  flake.modules.nixos.base = {pkgs, ...}: {
+    programs.zsh.enable = true;
+    users.users.${config.owner.username}.shell = pkgs.zsh;
+  };
+
+  flake.modules.homeManager.base = {
+    config,
+    lib,
+    ...
+  }: let
+    homePath = config.home.homeDirectory;
+    configPath = "${homePath}/nixos-dotfiles";
+    starshipPath = "${configPath}/config/starship.toml";
+  in {
+    programs.zsh = {
+      enable = true;
+
+      enableCompletion = true;
+      autosuggestion.enable = true;
+      syntaxHighlighting.enable = true;
+
+      initContent = lib.mkOrder 1000 ''
+        dc() {
+            (
+                cd "$1" || return
+                shift
+                docker compose "$@"
+            )
+        }
+      '';
+
+      shellAliases = {
+        nrs = "nh os switch -H laptop --accept-flake-config";
+        nru = "sudo nix flake update --flake ${configPath} && nrs";
+        x = "eza";
+        lg = "lazygit";
+        erp-start = "dc \"$HOME/repos/oracle-db\" up -d";
+        erp-down = "dc \"$HOME/repos/oracle-db\" down";
+        erp-logs = "dc \"$HOME/repos/oracle-db\" logs -f";
+      };
+
+      history.size = 10000;
+    };
+
+    programs.zoxide = {
+      enable = true;
+      enableZshIntegration = true;
+      options = ["--cmd cd"];
+    };
+
+    programs.eza = {
+      enable = true;
+      enableZshIntegration = true;
+      extraOptions = [
+        "-alh"
+        "--group-directories-first"
+        "--show-symlinks"
+        "--icons"
+        "--no-time"
+      ];
+    };
+
+    programs.starship = {
+      enable = true;
+      enableZshIntegration = true;
+      configPath = starshipPath;
+    };
+  };
+}

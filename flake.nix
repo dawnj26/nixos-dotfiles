@@ -6,7 +6,7 @@
     import-tree,
     ...
   } @ inputs:
-    flake-parts.lib.mkFlake {inherit inputs;} (import-tree ./flake);
+    flake-parts.lib.mkFlake {inherit inputs;} (import-tree ./modules);
 
   inputs = {
     flake-parts.url = "github:hercules-ci/flake-parts";
