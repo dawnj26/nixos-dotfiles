@@ -1,7 +1,8 @@
 {
-  flake.modules.nixos.desktop = {
+  flake.modules.nixos.desktop = {pkgs, ...}: {
     programs.thunar = {
       enable = true;
+      plugins = with pkgs; [thunar-archive-plugin thunar-volman thunar-vcs-plugin];
     };
   };
 }
