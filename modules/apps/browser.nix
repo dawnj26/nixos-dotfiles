@@ -14,5 +14,7 @@
     home.packages = with pkgs; [
       nur.repos.ymstnt.brave-origin
     ];
+
+    programs.zen-browser.enable = true;
   };
 }
