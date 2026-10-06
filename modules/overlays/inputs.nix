@@ -18,6 +18,7 @@
   flake.modules.homeManager.overlays = {
     imports = [
       inputs.noctalia.homeModules.default
+      inputs.zen-browser.homeModules.beta
     ];
   };
 }
