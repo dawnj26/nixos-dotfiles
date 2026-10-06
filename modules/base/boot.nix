@@ -13,6 +13,10 @@
         "rd.systemd.show_status=auto"
       ];
 
+      kernel.sysctl = {
+        "vm.max_map_count" = 2147483642;
+      };
+
       loader = {
         limine = {
           enable = true;
