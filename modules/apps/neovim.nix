@@ -42,6 +42,7 @@
 
       # AstroNvim Dependencies
       wl-clipboard
+      wl-clip-persist
       tree-sitter
       lazygit
       bottom
