@@ -7,6 +7,7 @@
       nerd-fonts.geist-mono
       inter
       corefonts
+      ibm-plex
     ];
   };
 }
