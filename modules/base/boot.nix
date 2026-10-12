@@ -11,6 +11,7 @@
         "quiet"
         "rd.udev.log_level=3"
         "rd.systemd.show_status=auto"
+        "split_lock_mitigate=0"
       ];
 
       kernel.sysctl = {
