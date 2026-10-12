@@ -8,6 +8,8 @@
       proton-vpn
       spicetify-cli
       manager-io
+      vibe
+      spotiflac
     ];
   };
 }
