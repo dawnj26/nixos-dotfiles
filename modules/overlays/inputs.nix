@@ -11,6 +11,7 @@
       (_: _: {
         zed-editor-bin = pkgs.callPackage ../../packages/zed-editor-bin.nix {};
         manager-io = pkgs.callPackage ../../packages/manager-io.nix {};
+        vibe = pkgs.callPackage ../../packages/vibe.nix {};
       })
     ];
   };
