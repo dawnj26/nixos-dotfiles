@@ -1,6 +1,6 @@
 {
   flake.modules.homeManager.desktop = let
-    browser = "brave-origin.desktop";
+    browser = "zen-beta.desktop";
     pdf = browser;
     image = "org.gnome.eog.desktop";
     video = "mpv.desktop";
