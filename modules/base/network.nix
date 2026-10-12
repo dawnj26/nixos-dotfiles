@@ -3,22 +3,28 @@
     networking = {
       networkmanager = {
         enable = true;
-        dns = "none";
+        dns = "systemd-resolved";
       };
-
-      nameservers = [
-        "1.1.1.1"
-        "1.0.0.1"
-        "8.8.8.8"
-        "8.8.4.4"
-      ];
 
       firewall = {
         enable = true;
-
         allowPing = true;
         allowedTCPPorts = [];
         allowedUDPPorts = [];
+      };
+    };
+
+    services.resolved = {
+      enable = true;
+      settings.Resolve = {
+        DNS = [
+          "1.1.1.1#cloudflare-dns.com"
+          "1.0.0.1#cloudflare-dns.com"
+          "8.8.8.8#dns.google"
+          "8.8.4.4#dns.google"
+        ];
+        DNSOverTLS = "true";
+        Domains = ["~."];
       };
     };
   };
