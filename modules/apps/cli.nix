@@ -1,5 +1,5 @@
 {
-  flake.modules.homeManager.base = {
+  flake.modules.homeManager.base = {pkgs, ...}: {
     programs = {
       bat.enable = true;
       ripgrep.enable = true;
@@ -9,5 +9,7 @@
       btop.enable = true;
       fastfetch.enable = true;
     };
+
+    home.packages = with pkgs; [hyprpicker];
   };
 }
