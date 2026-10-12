@@ -1,14 +1,17 @@
 {
   flake.modules.nixos.desktop = {pkgs, ...}: {
-    environment.systemPackages = [
-      (pkgs.writeShellApplication {
+    environment.systemPackages = with pkgs; [
+      (writeShellApplication {
         name = "run";
         runtimeInputs = [pkgs.runapp];
         text = ''
-          #!/usr/bin/env bash
-
           runapp -d "$PWD" "$@"
         '';
+      })
+      (writeShellApplication {
+        name = "xaudio";
+        runtimeInputs = [pkgs.ffmpeg];
+        text = builtins.readFile ../../scripts/xaudio.sh;
       })
     ];
   };
