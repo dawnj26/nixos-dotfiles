@@ -30,9 +30,11 @@
 
       gtk3.extraConfig = {
         gtk-application-prefer-dark-theme = 1;
+        gtk-decoration-layout = "";
       };
       gtk4.extraConfig = {
         gtk-application-prefer-dark-theme = 1;
+        gtk-decoration-layout = "";
       };
       font = {
         name = "Inter";
@@ -50,6 +52,7 @@
         color-scheme = "prefer-dark";
         cursor-theme = "Bibata-Modern-Ice";
       };
+      "org/gnome/desktop/wm/preferences".button-layout = "";
     };
 
     home.packages = [pkgs.qt6Packages.qt6ct];
