@@ -31,13 +31,12 @@
       '';
 
       shellAliases = {
+        z = "run zeditor";
         nrs = "nh os switch -H laptop --accept-flake-config";
-        nru = "sudo nix flake update --flake ${configPath} && nrs";
+        nru = "nix flake update --flake ${configPath} && nrs";
         x = "eza";
         lg = "lazygit";
         erp-start = "dc \"$HOME/repos/oracle-db\" up -d";
-        erp-down = "dc \"$HOME/repos/oracle-db\" down";
-        erp-logs = "dc \"$HOME/repos/oracle-db\" logs -f";
       };
 
       history.size = 10000;
