@@ -95,7 +95,7 @@
       '';
     };
     home.packages = with pkgs; [
-      nur.repos.ymstnt.brave-origin
+      brave-origin
     ];
   };
 }
