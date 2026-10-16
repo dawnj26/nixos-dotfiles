@@ -10,6 +10,6 @@
       fastfetch.enable = true;
     };
 
-    home.packages = with pkgs; [hyprpicker];
+    home.packages = with pkgs; [hyprpicker ffmpeg];
   };
 }
