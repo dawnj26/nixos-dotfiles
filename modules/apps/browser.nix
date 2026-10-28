@@ -11,89 +11,24 @@
     home.file.".config/chromium-flags.conf".text = flags;
     home.file.".config/brave-origin-flags.conf".text = flags;
 
-    programs.zen-browser = {
+    programs.helium = {
       enable = true;
-      policies = {
-        DisableAppUpdate = true;
-        DisableTelemetry = true;
-        DontCheckDefaultBrowser = true;
-      };
-      profiles.default.userChrome = ''
-               :host(:is(.anonymous-content-host, notification-message)),
-               :root,
-               .zenLooksAndFeelColorOption {
-
-        /* Theming Variables */
-        --zen-dark-color-mix-base: #0a0e14 !important;
-        --zen-colors-primary-foreground: #b3b1ad !important;
-        --zen-colors-border: #4b4b4b !important;
-        --zen-colors-primary: color-mix(in srgb,
-        	var(--zen-primary-color) 20%,
-        	var(--zen-dark-color-mix-base) 80%) !important;
-        --zen-colors-secondary: color-mix(in srgb,
-        	var(--zen-primary-color) 30%,
-        	var(--zen-dark-color-mix-base) 70%) !important;
-        --zen-colors-tertiary: var(--zen-dark-color-mix-base) !important;
-        --zen-main-browser-background: var(--zen-dark-color-mix-base) !important;
-        --zen-in-content-dialog-background: var(--zen-dark-color-mix-base) !important;
-        --zen-urlbar-background: var(--zen-dark-color-mix-base) !important;
-        --in-content-page-background: var(--zen-dark-color-mix-base) !important;
-        --in-content-box-background: var(--zen-dark-color-mix-base) !important;
-        --in-content-table-background: var(--zen-dark-color-mix-base) !important;
-        --card-background-color: #070b11 !important;
-        --in-content-button-background: #1e161b !important;
-        --zen-colors-hover-bg: color-mix(in srgb,
-        	var(--zen-primary-color) 70%,
-        	var(--zen-dark-color-mix-base) 30%) !important;
-        --zen-colors-input-bg: var(--zen-dark-color-mix-base) !important;
-        --zen-input-border-color: var(--zen-colors-border) !important;
-        --toolbarbutton-active-background: var(--zen-colors-primary) !important;
-        --zen-browser-gradient-base: var(--zen-colors-secondary) !important;
-        --in-content-primary-button-text-color: var(--zen-dark-color-mix-base) !important;
-        --toolbarbutton-icon-fill-attention: var(--in-content-primary-button-background) !important;
-        --zen-settings-secondary-background: var(--zen-dark-color-mix-base) !important;
-        --in-content-box-info-background: var(--zen-dark-color-mix-base) !important;
-        --newtab-background-color: var(--zen-dark-color-mix-base) !important;
-        --newtab-background-color-secondary: #070b11 !important;
-        --newtab-text-primary-color: var(--zen-colors-primary-foreground) !important;
-               }
-
-               /* Fix pinned tab colors. */
-               .tabbrowser-tab[pinned] .tab-stack .tab-background {
-        background: color-mix(in srgb,
-        		var(--zen-colors-secondary) 30%,
-        		transparent 70%) !important;
-               }
-
-               .tabbrowser-tab[pinned][selected="true"] .tab-stack .tab-background,
-               .tabbrowser-tab[pinned][multiselected="true"] .tab-stack .tab-background {
-        background-color: var(--zen-colors-primary) !important;
-               }
-
-               /* Browser and Settings Pages */
-               @-moz-document regexp("about:.*"),
-               regexp("chrome:.*"),
-               url("https://www.mozilla.org/credits/") {
-
-        html,
-        body,
-        #mount {
-        	background-color: var(--zen-dark-color-mix-base) !important;
-        }
-
-        :where(groupbox) button,
-        .default-button {
-        	background-color: var(--in-content-button-background) !important;
-        }
-
-        .navigation,
-        .moz-card,
-        groupbox {
-        	background-color: #070b11 !important;
-        }
-               }
-      '';
+      flags = [
+        "--ozone-platform-hint=auto"
+        "--ozone-platform=wayland"
+        "--enable-features=UseOzonePlatform,VaapiVideoDecodeLinuxGL,VaapiVideoDecoder,CanvasOopRasterization,VaapiVideoEncoder"
+        "--enable-gpu-rasterization"
+        "--enable-zero-copy"
+      ];
+      package = pkgs.helium.overrideAttrs (old: final: rec {
+        version = "0.20.1.1";
+        src = pkgs.fetchurl {
+          url = "https://github.com/imputnet/helium-linux/releases/download/${version}/helium-bin_${version}-1_amd64.deb";
+          sha256 = "sha256-HLpZpTAxuGYhbYV4DJBo1x4xiiXhlgJ1LZ46ReGT+l4=";
+        };
+      });
     };
+
     home.packages = with pkgs; [
       brave-origin
     ];

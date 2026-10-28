@@ -1,6 +1,6 @@
 {
   flake.modules.homeManager.desktop = let
-    browser = "zen-beta.desktop";
+    browser = "helium.desktop";
     pdf = browser;
     image = "org.gnome.eog.desktop";
     video = "mpv.desktop";

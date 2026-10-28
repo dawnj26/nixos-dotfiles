@@ -1,7 +1,7 @@
 local M = {}
 
 M.terminal = "foot"
-M.browser = "zen-beta"
+M.browser = "helium"
 M.launcher = "walker"
 M.file_manager = "thunar"
 M.notes = "obsidian"
