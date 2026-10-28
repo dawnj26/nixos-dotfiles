@@ -2,12 +2,10 @@
   flake.modules.nixos.overlays = {
     nixpkgs.config.allowUnfree = true;
 
-    imports = [
-      inputs.nur.modules.nixos.default
-    ];
-
     nixpkgs.overlays = [
       inputs.nix-cachyos-kernel.overlays.pinned
+      inputs.spotx-nix.overlays.default
+      inputs.helium.overlays.default
       (final: prev: {
         zed-editor-bin = final.callPackage ../../packages/zed-editor-bin.nix {};
         manager-io = final.callPackage ../../packages/manager-io.nix {};
@@ -28,7 +26,7 @@
   flake.modules.homeManager.overlays = {
     imports = [
       inputs.noctalia.homeModules.default
-      inputs.zen-browser.homeModules.beta
+      inputs.helium.homeModules.default
     ];
   };
 }
