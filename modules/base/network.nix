@@ -18,10 +18,10 @@
       enable = true;
       settings.Resolve = {
         DNS = [
-          "1.1.1.1#cloudflare-dns.com"
-          "1.0.0.1#cloudflare-dns.com"
-          "8.8.8.8#dns.google"
-          "8.8.4.4#dns.google"
+          "45.90.28.0#951196.dns.nextdns.io"
+          "2a07:a8c0::#951196.dns.nextdns.io"
+          "45.90.30.0#951196.dns.nextdns.io"
+          "2a07:a8c1::#951196.dns.nextdns.io"
         ];
         DNSOverTLS = "true";
         Domains = ["~."];
