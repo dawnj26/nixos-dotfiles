@@ -31,7 +31,7 @@
       '';
 
       shellAliases = {
-        z = "run zeditor";
+        z = "run zeditor .";
         nrs = "nh os switch -H laptop --accept-flake-config";
         nru = "nix flake update --flake ${configPath} && nrs";
         x = "eza";
