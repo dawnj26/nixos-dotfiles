@@ -5,5 +5,7 @@ require("rules")
 require("input")
 require("appearance")
 
+
+
 -- For Noctalia Color templates
 require("noctalia").apply_theme()
