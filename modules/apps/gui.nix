@@ -10,6 +10,8 @@
       manager-io
       vibe
       spotiflac
+      gimp
+      spotify-spotx
     ];
   };
 }
