@@ -19,24 +19,21 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    nur = {
-      url = "github:nix-community/NUR";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
     nix-cachyos-kernel = {
-      url = "github:xddxdd/nix-cachyos-kernel/release";
+      url = "github:xddxdd/nix-cachyos-kernel";
     };
 
     hyprland.url = "github:hyprwm/Hyprland";
     noctalia.url = "github:noctalia-dev/noctalia/cachix";
 
-    zen-browser = {
-      url = "github:0xc000022070/zen-browser-flake/beta";
-      inputs = {
-        nixpkgs.follows = "nixpkgs";
-        home-manager.follows = "home-manager";
-      };
+    helium = {
+      url = "github:oxcl/nix-flake-helium-browser";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    spotx-nix = {
+      url = "github:SpotX-Official/SpotX-Nix";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
   };
 }
