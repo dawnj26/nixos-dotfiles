@@ -1,8 +1,9 @@
 {
   flake.modules.nixos.base = {pkgs, ...}: {
     boot = {
+      plymouth.enable = true;
+
       consoleLogLevel = 3;
-      initrd.verbose = false;
       kernelParams = [
         "quiet"
         "rd.udev.log_level=3"
