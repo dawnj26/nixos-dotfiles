@@ -12,6 +12,7 @@
       spotiflac
       gimp
       spotify-spotx
+      localsend
     ];
   };
 }
