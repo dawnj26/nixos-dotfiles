@@ -1,5 +1,7 @@
 {
-  flake.modules.nixos.base = {
+  flake.modules.nixos.base = let
+    localsendPort = 53317;
+  in {
     networking = {
       networkmanager = {
         enable = true;
@@ -9,8 +11,8 @@
       firewall = {
         enable = true;
         allowPing = true;
-        allowedTCPPorts = [];
-        allowedUDPPorts = [];
+        allowedTCPPorts = [localsendPort];
+        allowedUDPPorts = [localsendPort];
       };
     };
 
