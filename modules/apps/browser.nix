@@ -20,13 +20,6 @@
         "--enable-gpu-rasterization"
         "--enable-zero-copy"
       ];
-      package = pkgs.helium.overrideAttrs (old: final: rec {
-        version = "0.20.1.1";
-        src = pkgs.fetchurl {
-          url = "https://github.com/imputnet/helium-linux/releases/download/${version}/helium-bin_${version}-1_amd64.deb";
-          sha256 = "sha256-HLpZpTAxuGYhbYV4DJBo1x4xiiXhlgJ1LZ46ReGT+l4=";
-        };
-      });
     };
 
     home.packages = with pkgs; [

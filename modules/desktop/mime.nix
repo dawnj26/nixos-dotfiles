@@ -1,6 +1,6 @@
 {
   flake.modules.homeManager.desktop = let
-    browser = "helium.desktop";
+    browser = "brave-origin.desktop";
     pdf = browser;
     image = "org.gnome.eog.desktop";
     video = "mpv.desktop";
