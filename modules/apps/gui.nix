@@ -13,6 +13,13 @@
       gimp
       spotify-spotx
       localsend
+      amberol
     ];
+
+    programs.craftapps = {
+      enable = true;
+      apps.wordcraft.enable = true;
+      apps.pdfcraft.enable = true;
+    };
   };
 }
