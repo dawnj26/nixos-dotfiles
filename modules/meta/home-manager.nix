@@ -19,6 +19,8 @@
           desktop
           dev
           gaming
+        ] ++ [
+          inputs.nix-craftapps.homeManagerModules.default
         ];
         home = {
           homeDirectory = "/home/dawn";
