@@ -10,6 +10,6 @@
       fastfetch.enable = true;
     };
 
-    home.packages = with pkgs; [hyprpicker ffmpeg];
+    home.packages = with pkgs; [hyprpicker ffmpeg ani-cli];
   };
 }
