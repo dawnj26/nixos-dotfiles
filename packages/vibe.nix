@@ -31,13 +31,13 @@
 in
   stdenv.mkDerivation (finalAttrs: rec {
     pname = "vibe";
-    version = "3.2.2";
+    version = "3.3.0";
     __structuredAttrs = true;
     strictDeps = true;
 
     src = fetchurl {
       url = "https://github.com/thewh1teagle/vibe/releases/download/v${finalAttrs.version}/vibe_${finalAttrs.version}_amd64.deb";
-      hash = "sha256-N1n1/0Y4hoL76ORAEjzBIdx7eYTyxi1Zl0A6eYS9gnM=";
+      hash = "sha256-74GcC+E/BuCU9z57Xgm51hnk6PcRzfLnnXeWQbIqRZA=";
     };
 
     dontConfigure = true;
