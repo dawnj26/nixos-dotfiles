@@ -7,16 +7,20 @@
     inputs.nixpkgs.lib.nixosSystem {
       inherit system;
 
-      modules = with config.flake.modules.nixos; [
-        overlays
-        hardware
-        base
-        dev
-        desktop
-        gaming
-        home-manager
-        amd
-      ];
+      modules = with config.flake.modules.nixos;
+        [
+          overlays
+          hardware
+          base
+          dev
+          desktop
+          gaming
+          home-manager
+          amd
+        ]
+        ++ [
+          inputs.brave.nixosModules.default
+        ];
     };
 in {
   flake.nixosConfigurations = {
