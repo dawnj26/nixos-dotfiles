@@ -20,19 +20,24 @@
     };
 
     nix-cachyos-kernel = {
-      url = "github:xddxdd/nix-cachyos-kernel";
+      url = "github:xddxdd/nix-cachyos-kernel/release";
     };
 
-    hyprland.url = "github:hyprwm/Hyprland";
+    hyprland.url = "github:hyprwm/Hyprland/v0.57.2";
     noctalia.url = "github:noctalia-dev/noctalia/cachix";
-
-    helium = {
-      url = "github:oxcl/nix-flake-helium-browser";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
 
     spotx-nix = {
       url = "github:SpotX-Official/SpotX-Nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    brave = {
+      url = "git+https://codeberg.org/buckley310/brave-browser-nix?ref=main";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    nix-craftapps = {
+      url = "github:olafkfreund/nix-craftapps";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
