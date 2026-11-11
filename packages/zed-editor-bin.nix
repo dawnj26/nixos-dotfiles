@@ -26,7 +26,7 @@
 }:
 stdenv.mkDerivation (finalAttrs: {
   pname = "zed-editor-bin";
-  version = "1.25.2";
+  version = "1.27.0";
 
   src =
     finalAttrs.passthru.sources.${stdenv.hostPlatform.system}
@@ -103,7 +103,7 @@ stdenv.mkDerivation (finalAttrs: {
         inherit hash;
       };
   in {
-    x86_64-linux = fetchRelease "x86_64" "sha256-tAXr6oEMgv+EhUYx57KFOuHyLdG34wbLV3JkccZhdQg=";
+    x86_64-linux = fetchRelease "x86_64" "sha256-cZ9r9knqjYeWGtv3KOF4VhusP1mNcteUlVjRFQz8Q90=";
     aarch64-linux = fetchRelease "aarch64" "sha256-IkMbvRXhsY7kKXk5WyQtMmF41KX21mCP9ftFIMU1ock=";
   };
 
