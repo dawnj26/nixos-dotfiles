@@ -1,7 +1,7 @@
 {
   flake.modules.homeManager.desktop = let
     browser = "brave-origin.desktop";
-    pdf = browser;
+    pdf = "ai.storyteller.pdfcraft.desktop";
     image = "org.gnome.eog.desktop";
     video = "mpv.desktop";
   in {
