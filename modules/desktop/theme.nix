@@ -10,11 +10,6 @@
         enable = true;
         size = 24;
       };
-
-      hyprcursor = {
-        enable = true;
-        size = 24;
-      };
     };
 
     gtk = {

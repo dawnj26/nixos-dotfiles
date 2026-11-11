@@ -23,7 +23,11 @@
       url = "github:xddxdd/nix-cachyos-kernel/release";
     };
 
-    hyprland.url = "github:hyprwm/Hyprland/v0.57.2";
+    mangowm = {
+      url = "github:mangowm/mango";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     noctalia.url = "github:noctalia-dev/noctalia/cachix";
 
     spotx-nix = {

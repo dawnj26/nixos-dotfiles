@@ -2,6 +2,10 @@
   flake.modules.nixos.overlays = {
     nixpkgs.config.allowUnfree = true;
 
+    imports = [
+      inputs.mangowm.nixosModules.mango
+    ];
+
     nixpkgs.overlays = [
       inputs.nix-cachyos-kernel.overlays.pinned
       inputs.spotx-nix.overlays.default
@@ -27,6 +31,7 @@
   flake.modules.homeManager.overlays = {
     imports = [
       inputs.noctalia.homeModules.default
+      inputs.mangowm.hmModules.mango
     ];
   };
 }

@@ -1,17 +1,14 @@
-{inputs, ...}: {
-  flake.modules.homeManager.desktop = {pkgs, ...}: let
-    system = pkgs.stdenv.hostPlatform.system;
-    hyprPkgs = inputs.hyprland.packages.${system};
-  in {
+{
+  flake.modules.homeManager.desktop = {pkgs, ...}: {
     xdg.portal = {
       enable = true;
       extraPortals = [
         pkgs.xdg-desktop-portal-gtk
-        hyprPkgs.xdg-desktop-portal-hyprland
+        pkgs.xdg-desktop-portal-wlr
       ];
       configPackages = [
         pkgs.xdg-desktop-portal-gtk
-        hyprPkgs.xdg-desktop-portal-hyprland
+        pkgs.xdg-desktop-portal-wlr
       ];
     };
   };

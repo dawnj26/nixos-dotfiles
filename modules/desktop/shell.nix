@@ -95,7 +95,6 @@
               "foot"
               "gtk3"
               "gtk4"
-              "hyprland"
               "kcolorscheme"
               "qt"
               "starship"
