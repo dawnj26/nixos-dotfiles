@@ -1,5 +1,5 @@
 {
-  flake.modules.homeManager.desktop = {pkgs, ...}: let
+  flake.modules.homeManager.desktop = let
     flags = ''
       --ozone-platform-hint=auto
       --ozone-platform=wayland
@@ -11,19 +11,6 @@
     home.file.".config/chromium-flags.conf".text = flags;
     home.file.".config/brave-origin-flags.conf".text = flags;
 
-    programs.helium = {
-      enable = true;
-      flags = [
-        "--ozone-platform-hint=auto"
-        "--ozone-platform=wayland"
-        "--enable-features=UseOzonePlatform,VaapiVideoDecodeLinuxGL,VaapiVideoDecoder,CanvasOopRasterization,VaapiVideoEncoder"
-        "--enable-gpu-rasterization"
-        "--enable-zero-copy"
-      ];
-    };
-
-    home.packages = with pkgs; [
-      brave-origin
-    ];
+    programs.brave-origin.enable = true;
   };
 }
