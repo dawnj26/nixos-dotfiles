@@ -32,8 +32,8 @@
         gtk-decoration-layout = "";
       };
       font = {
-        name = "Inter";
-        size = 12;
+        name = "Geist";
+        size = 10;
       };
     };
 
