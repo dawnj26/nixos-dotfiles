@@ -5,6 +5,7 @@
       TERMINAL = "foot";
       EDITOR = "nvim";
       VISUAL = "nvim";
+      WLR_RENDERER = "vulkan";
     };
   };
 }
