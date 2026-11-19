@@ -1,0 +1,86 @@
+[var]
+Mod = "SUPER"
+run = "runapp"
+ipc = "noctalia msg"
+terminal = "foot"
+browser = "brave-origin"
+launcher = "walker"
+file_manager = "thunar"
+notes = "obsidian"
+
+[bind.default]
+"$Mod+q" = "spawn,$run $terminal"
+"$Mod+w" = "spawn,$run $browser"
+"$Mod+e" = "spawn,$run $file_manager"
+"$Mod+o" = "spawn,$run $notes"
+"$Mod+t" = "spawn,$run hyprpicker -a -f hex -n"
+
+"$Mod+c" = "killclient"
+"$Mod+v" = "togglefloating"
+
+"ALT+space" = "spawn,$ipc panel-toggle launcher"
+"$Mod+period" = "spawn,$ipc panel-toggle control-center"
+"$Mod+comma" = "spawn,$ipc settings-toggle"
+"ALT+Tab" = "spawn,$ipc window-switcher"
+
+"$Mod+h" = "focusdir,left"
+"$Mod+j" = "focusdir,down"
+"$Mod+k" = "focusdir,up"
+"$Mod+l" = "focusdir,right"
+
+"$Mod+Left" = "resizewin,-10,+0"
+"$Mod+Down" = "resizewin,+0,+10"
+"$Mod+Up" = "resizewin,+0,-10"
+"$Mod+Right" = "resizewin,+10,+0"
+
+"$Mod+SHIFT+h" = "move_client,left"
+"$Mod+SHIFT+j" = "move_client,down"
+"$Mod+SHIFT+k" = "move_client,up"
+"$Mod+SHIFT+l" = "move_client,right"
+
+"Print" = "spawn,$ipc screenshot-region"
+"$Mod+r" = "spawn,$ipc plugin noctalia/screen_recorder:service all toggle"
+
+"$Mod+1" = "view,1,0"
+"$Mod+2" = "view,2,0"
+"$Mod+3" = "view,3,0"
+"$Mod+4" = "view,4,0"
+"$Mod+5" = "view,5,0"
+"$Mod+6" = "view,6,0"
+"$Mod+7" = "view,7,0"
+"$Mod+8" = "view,8,0"
+"$Mod+9" = "view,9,0"
+"$Mod+0" = "view,10,0"
+
+"$Mod+SHIFT+1" = "tag,1,0"
+"$Mod+SHIFT+2" = "tag,2,0"
+"$Mod+SHIFT+3" = "tag,3,0"
+"$Mod+SHIFT+4" = "tag,4,0"
+"$Mod+SHIFT+5" = "tag,5,0"
+"$Mod+SHIFT+6" = "tag,6,0"
+"$Mod+SHIFT+7" = "tag,7,0"
+"$Mod+SHIFT+8" = "tag,8,0"
+"$Mod+SHIFT+9" = "tag,9,0"
+"$Mod+SHIFT+0" = "tag,10,0"
+
+"$Mod+s"       = "toggle_special_tag"
+"$Mod+SHIFT+s" = "tag_special_tag"
+"$Mod+CTRL+s"  = "tag_special_silent"
+
+"$Mod+SHIFT+f" = "togglefakefullscreen"
+"$Mod+CTRL+f"  = "togglemaximizescreen"
+"$Mod+f" = "togglefullscreen"
+
+[bind.default.lock]
+"XF86AudioRaiseVolume" = "spawn,$ipc volume-up"
+"XF86AudioLowerVolume" = "spawn,$ipc volume-down"
+"XF86AudioMute" = "spawn,$ipc volume-mute"
+"XF86MonBrightnessUp" = "spawn,$ipc brightness-up"
+"XF86MonBrightnessDown" = "spawn,$ipc brightness-down"
+"XF86AudioNext" = "spawn,playerctl next"
+"XF86AudioPlay" = "spawn,playerctl play-pause"
+"XF86AudioPrev" = "spawn,playerctl previous"
+
+[mousebind.default]
+"$Mod+btn_left" = "moveresize,curmove"
+"$Mod+btn_right" = "moveresize,curresize"

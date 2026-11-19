@@ -1,0 +1,29 @@
+[[rule.window_rule]]
+app_id = '^dev\.noctalia\.Noctalia$'
+is_floating = 1
+width = "$float_w"
+height = "$float_h"
+
+[[rule.window_rule]]
+app_id = '^(xdg-desktop-portal-gtk|xdg-desktop-portal-kde)$'
+is_floating = 1
+width = "$float_w"
+height = "$float_h"
+
+[[rule.window_rule]]
+title = '.*(Open|Save|Save As|Import|Export|Choose|Select|Browse|Folder|Directory).*'
+is_floating = 1
+width = "$float_w"
+height = "$float_h"
+
+[[rule.window_rule]]
+app_id = '^dev\.zed\.Zed$'
+title = '.*Settings.*'
+is_floating = 1
+width = "$float_w"
+height = "$float_h"
+
+[[rule.window_rule]]
+app_id = '^thunar$'
+title = '^(Rename.*|Properties|Confirm to replace files|Create.*|Trash|Authentication)'
+is_floating = 1

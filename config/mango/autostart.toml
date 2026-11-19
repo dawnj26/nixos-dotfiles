@@ -1,0 +1,4 @@
+[global]
+exec_once = [
+  "$run wl-clip-persist --clipboard regular",
+]
