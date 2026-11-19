@@ -6,7 +6,6 @@
 
   flake.modules.homeManager.base = {
     config,
-    lib,
     ...
   }: let
     homePath = config.home.homeDirectory;
@@ -20,23 +19,12 @@
       autosuggestion.enable = true;
       syntaxHighlighting.enable = true;
 
-      initContent = lib.mkOrder 1000 ''
-        dc() {
-            (
-                cd "$1" || return
-                shift
-                docker compose "$@"
-            )
-        }
-      '';
-
       shellAliases = {
         z = "run zeditor .";
         nrs = "nh os switch -H laptop --accept-flake-config";
         nru = "nix flake update --flake ${configPath} && nrs";
         x = "eza";
         lg = "lazygit";
-        erp-start = "dc \"$HOME/repos/oracle-db\" up -d";
       };
 
       history.size = 10000;

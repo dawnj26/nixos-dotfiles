@@ -5,12 +5,7 @@
       qbittorrent
       vesktop
       obsidian
-      proton-vpn
-      spicetify-cli
-      manager-io
       vibe
-      spotiflac
-      gimp
       spotify-spotx
       localsend
       amberol
