@@ -9,9 +9,10 @@
     nixpkgs.overlays = [
       inputs.nix-cachyos-kernel.overlays.pinned
       inputs.spotx-nix.overlays.default
-      (final: prev: {
+      (final: prev: let
+       system = final.stdenv.hostPlatform.system;
+        in {
         zed-editor-bin = final.callPackage ../../packages/zed-editor-bin.nix {};
-        manager-io = final.callPackage ../../packages/manager-io.nix {};
         vibe = final.callPackage ../../packages/vibe.nix {};
 
         hyprmoncfg = prev.hyprmoncfg.overrideAttrs (_: rec {
@@ -24,6 +25,7 @@
           };
           vendorHash = "sha256-wpSKWfc8EO+luoICZmxsrQitBD2M+1zPDNukLCF0+/Y=";
         });
+        ttf-ms-win11-auto = inputs.win11-fonts.packages.${system}.ttf-ms-win11-auto;
       })
     ];
   };

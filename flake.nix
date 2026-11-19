@@ -44,5 +44,10 @@
       url = "github:olafkfreund/nix-craftapps";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    win11-fonts = {
+      url = "github:kugland/nix-ttf-ms-win11-auto";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 }

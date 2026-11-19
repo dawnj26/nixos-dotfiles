@@ -6,8 +6,10 @@
       nerd-fonts.jetbrains-mono
       nerd-fonts.geist-mono
       inter
-      corefonts
+      ttf-ms-win11-auto
+      dejavu_fonts
       ibm-plex
+      geist-font
     ];
   };
 }
